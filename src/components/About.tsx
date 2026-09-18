@@ -1,14 +1,13 @@
 import React from 'react';
-import { Globe, ShieldCheck, Terminal, Cpu } from 'lucide-react';
 import { TALHA_CONFIG } from '@/lib/constants';
 
 export const About = () => {
   return (
     <section id="about" className="content-section diffuse-reveal">
-      <div className="section-label">07 // Engineering Philosophy &amp; Approach</div>
+      <div className="section-label">04 // About</div>
 
       <p className="about-paragraph">
-        My experience sits strongly on the engineering side of cloud architecture. I work by first understanding the existing environment and requirements, identifying technical risks and gaps, designing practical solutions, implementing them through Infrastructure as Code and automation, validating changes, and supporting them in production.
+        I build reliable, automated, and self-healing cloud platforms. My work sits at the foundation: designing resilient multi-cloud architectures, eliminating operational toil, and leaving systems resilient against failure.
       </p>
 
       <div className="about-grid">
@@ -32,24 +31,24 @@ export const About = () => {
       </div>
 
       <div className="about-grid">
-        <div className="about-col">
-          <span className="about-col-label">Execution Lifecycle</span>
+        <div className="about-col diffuse-reveal">
+          <span className="about-col-label">Execution Standard</span>
           <p className="about-col-value">
-            Root cause analysis to solution design, automated IaC implementation, validation, and documentation.
+            Understand existing environments, design practical solutions, automate via IaC, and validate in staging before production.
           </p>
         </div>
 
-        <div className="about-col">
+        <div className="about-col diffuse-reveal">
           <span className="about-col-label">Security Mindset</span>
           <p className="about-col-value">
-            Separation of Duties, IAM least-privilege, Kyverno admission policies, and default-deny networking.
+            Separation of Duties, IAM least-privilege, Kyverno admission policies, and default-deny network controls.
           </p>
         </div>
 
-        <div className="about-col">
+        <div className="about-col diffuse-reveal">
           <span className="about-col-label">Reliability Standard</span>
           <p className="about-col-value">
-            Correlated LGTM telemetry, blameless troubleshooting, and automated rollback workflows.
+            Correlated telemetry across logs, metrics, and traces with automated GitOps rollback workflows.
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Github, Linkedin, MessageSquare, Mail, FileText, ArrowDown } from 'lucide-react';
+import { Github, Linkedin, MessageSquare, Mail, FileText } from 'lucide-react';
 import { TALHA_CONFIG } from '@/lib/constants';
 
 export const Hero = () => {
@@ -16,8 +16,8 @@ export const Hero = () => {
       </h1>
 
       <h2 className="hero-lead">
-        <span className="hero-lead-line">AWS Infrastructure • Kubernetes • Cloud Security</span>
-        <span className="hero-lead-line">Automation • Reliability</span>
+        <span className="hero-lead-line">Multi-Cloud Infrastructure • Kubernetes</span>
+        <span className="hero-lead-line">Production Reliability</span>
       </h2>
 
       <p className="hero-sub">
@@ -28,17 +28,11 @@ export const Hero = () => {
         <a href="#contact" className="btn-pill-primary">
           Get in touch
         </a>
-        <a href="#experience" className="btn-pill-outline">
-          Explore engineering work
+        <a href="#work" className="btn-pill-outline">
+          Explore projects
         </a>
-        <a
-          href={TALHA_CONFIG.resumeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-pill-outline"
-        >
-          <FileText size={13} style={{ marginRight: '6px' }} />
-          Download Resume
+        <a href="#capabilities" className="btn-pill-outline">
+          Capabilities
         </a>
       </div>
 
@@ -69,7 +63,7 @@ export const Hero = () => {
           rel="noopener noreferrer"
           className="social-circle"
           aria-label="WhatsApp Contact"
-          title="WhatsApp (+92 315 6569204)"
+          title="WhatsApp"
         >
           <MessageSquare size={16} />
         </a>
@@ -77,17 +71,15 @@ export const Hero = () => {
           href={`mailto:${TALHA_CONFIG.email}`}
           className="social-circle"
           aria-label="Email Contact"
-          title="Email (talha32rehman@gmail.com)"
+          title="Email"
         >
           <Mail size={16} />
         </a>
         <a
           href={TALHA_CONFIG.resumeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
           className="social-circle"
-          aria-label="Download Resume"
-          title="Download Resume (PDF)"
+          aria-label="Request CV"
+          title="Request CV"
         >
           <FileText size={16} />
         </a>

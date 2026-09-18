@@ -4,7 +4,7 @@ import { TALHA_CONFIG } from '@/lib/constants';
 export const Contact = () => {
   return (
     <section id="contact" className="contact-section diffuse-reveal">
-      <div className="section-label">08 // Contact &amp; Collaboration</div>
+      <div className="section-label">05 // Contact</div>
 
       <h2 className="contact-headline">
         Have infrastructure worth automating or scaling?
@@ -52,11 +52,9 @@ export const Contact = () => {
         <span className="contact-channel-separator" />
         <a
           href={TALHA_CONFIG.resumeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
           className="contact-channel-item"
         >
-          Download Resume (PDF)
+          Request CV
         </a>
       </div>
     </section>
