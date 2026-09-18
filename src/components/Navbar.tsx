@@ -30,6 +30,7 @@ export const Navbar = () => {
           <a
             href={TALHA_CONFIG.resumeUrl}
             className="resume-pill-btn"
+            onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('open-request-cv')); }}
             title="Request CV"
           >
             <FileDown size={14} className="resume-icon" />

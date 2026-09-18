@@ -8,6 +8,7 @@ import { Stack } from '@/components/Stack';
 import { About } from '@/components/About';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
+import { RequestCvModal } from '@/components/RequestCvModal';
 import { ScrollObserver } from '@/components/ScrollObserver';
 
 export default function HomePage() {
@@ -25,6 +26,7 @@ export default function HomePage() {
         <Contact />
       </main>
       <Footer />
+      <RequestCvModal />
     </>
   );
 }
