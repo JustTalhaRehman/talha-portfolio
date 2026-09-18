@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Github, Linkedin, MessageSquare, Mail, FileText } from 'lucide-react';
+import { Github, Linkedin, MessageSquare, Mail, FileText, ArrowDown } from 'lucide-react';
 import { TALHA_CONFIG } from '@/lib/constants';
 
 export const Hero = () => {
@@ -27,8 +27,17 @@ export const Hero = () => {
         <a href="#contact" className="btn-pill-primary">
           Get in touch
         </a>
-        <a href="#work" className="btn-pill-outline">
-          Explore my work
+        <a href="#experience" className="btn-pill-outline">
+          Explore engineering work
+        </a>
+        <a
+          href={TALHA_CONFIG.resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-pill-outline"
+        >
+          <FileText size={13} style={{ marginRight: '6px' }} />
+          Download Resume
         </a>
       </div>
 
@@ -59,7 +68,7 @@ export const Hero = () => {
           rel="noopener noreferrer"
           className="social-circle"
           aria-label="WhatsApp Contact"
-          title="WhatsApp"
+          title="WhatsApp (+92 315 6569204)"
         >
           <MessageSquare size={16} />
         </a>
@@ -67,7 +76,7 @@ export const Hero = () => {
           href={`mailto:${TALHA_CONFIG.email}`}
           className="social-circle"
           aria-label="Email Contact"
-          title="Email"
+          title="Email (talha32rehman@gmail.com)"
         >
           <Mail size={16} />
         </a>
@@ -77,7 +86,7 @@ export const Hero = () => {
           rel="noopener noreferrer"
           className="social-circle"
           aria-label="Download Resume"
-          title="Download Resume"
+          title="Download Resume (PDF)"
         >
           <FileText size={16} />
         </a>

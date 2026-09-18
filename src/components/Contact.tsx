@@ -4,14 +4,14 @@ import { TALHA_CONFIG } from '@/lib/constants';
 export const Contact = () => {
   return (
     <section id="contact" className="contact-section">
-      <div className="section-label">06 // Contact</div>
+      <div className="section-label">08 // Contact &amp; Collaboration</div>
 
       <h2 className="contact-headline">
         Have infrastructure worth automating or scaling?
       </h2>
 
       <p className="contact-sub">
-        Send the architecture, requirements, or repo. I&apos;m based in Gujranwala and reply with practical engineering next steps.
+        Send architectural requirements, platform challenges, or current codebases. I collaborate with engineering teams worldwide and respond with practical next steps.
       </p>
 
       <a href={`mailto:${TALHA_CONFIG.email}`} className="contact-email-link">
@@ -19,7 +19,7 @@ export const Contact = () => {
       </a>
 
       <p className="contact-location">
-        {TALHA_CONFIG.location}
+        {TALHA_CONFIG.location} · {TALHA_CONFIG.phone}
       </p>
 
       <div className="contact-channels-bar">
@@ -47,7 +47,7 @@ export const Contact = () => {
           rel="noopener noreferrer"
           className="contact-channel-item"
         >
-          WhatsApp ({TALHA_CONFIG.phone})
+          WhatsApp
         </a>
         <span className="contact-channel-separator" />
         <a
@@ -56,7 +56,7 @@ export const Contact = () => {
           rel="noopener noreferrer"
           className="contact-channel-item"
         >
-          Resume
+          Download Resume (PDF)
         </a>
       </div>
     </section>

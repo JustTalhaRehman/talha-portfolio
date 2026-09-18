@@ -3,9 +3,11 @@ import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { Trust } from '@/components/Trust';
 import { Experience } from '@/components/Experience';
+import { Achievements } from '@/components/Achievements';
 import { Services } from '@/components/Services';
 import { Projects } from '@/components/Projects';
 import { Stack } from '@/components/Stack';
+import { Credentials } from '@/components/Credentials';
 import { About } from '@/components/About';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
@@ -18,9 +20,11 @@ export default function HomePage() {
         <Hero />
         <Trust />
         <Experience />
+        <Achievements />
         <Services />
         <Projects />
         <Stack />
+        <Credentials />
         <About />
         <Contact />
       </main>

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, FileDown } from 'lucide-react';
 import { useTheme } from '@/hooks/useTheme';
 import { TALHA_CONFIG } from '@/lib/constants';
 
@@ -19,15 +19,28 @@ export const Navbar = () => {
         <nav aria-label="Main Navigation">
           <ul className="nav-links">
             <li><a href="#experience" className="nav-link">Experience</a></li>
-            <li><a href="#services" className="nav-link">What I build</a></li>
+            <li><a href="#achievements" className="nav-link">Achievements</a></li>
+            <li><a href="#services" className="nav-link">Services</a></li>
             <li><a href="#work" className="nav-link">Projects</a></li>
             <li><a href="#skills" className="nav-link">Stack</a></li>
+            <li><a href="#credentials" className="nav-link">Credentials</a></li>
             <li><a href="#about" className="nav-link">About</a></li>
             <li><a href="#contact" className="nav-link">Contact</a></li>
           </ul>
         </nav>
 
         <div className="nav-actions">
+          <a
+            href={TALHA_CONFIG.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume-pill-btn"
+            title="Download PDF Resume"
+          >
+            <FileDown size={13} />
+            <span>CV</span>
+          </a>
+
           <div className="status-pill" title="Current Status">
             <span className="status-dot">
               <span className="status-dot-ping" />

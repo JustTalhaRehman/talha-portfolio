@@ -760,6 +760,205 @@ a {
   background-color: var(--border-strong);
 }
 
+/* NAVBAR CV PILL */
+.resume-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background: var(--pill-bg);
+  border: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.resume-pill-btn:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+/* EXPERIENCE CLEAN STYLES */
+.experience-title-clean {
+  font-size: clamp(1.6rem, 3.8vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  margin-top: 4px;
+}
+
+.experience-bullets-clean {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  max-width: 48rem;
+}
+
+.experience-bullet-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.bullet-icon {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--emerald);
+  opacity: 0.9;
+}
+
+.bullet-lead {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ACHIEVEMENTS GRID */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.achievement-card {
+  padding: 24px 22px;
+  background: var(--pill-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.achievement-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  background: var(--surface-hover);
+}
+
+.achievement-metric {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--emerald);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.achievement-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.achievement-detail {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* CREDENTIALS GRID */
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.credential-box {
+  padding: 24px 22px;
+  background: var(--pill-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-fast);
+}
+
+.credential-box:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  background: var(--surface-hover);
+}
+
+.credential-icon-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.credential-icon {
+  color: var(--text-primary);
+  opacity: 0.8;
+}
+
+.credential-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.credential-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.credential-org {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.credential-meta-row {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.credential-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-primary);
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.credential-action-link:hover {
+  color: var(--emerald);
+  transform: translateX(2px);
+}
+
 /* FOOTER */
 .simple-footer {
   border-top: 1px solid var(--border);
@@ -771,6 +970,10 @@ a {
 
 @media (max-width: 768px) {
   .trust-grid {
+    grid-template-columns: 1fr;
+  }
+  .achievements-grid,
+  .credentials-grid {
     grid-template-columns: 1fr;
   }
   .service-header {
@@ -789,3 +992,4 @@ a {
     display: none;
   }
 }
+
