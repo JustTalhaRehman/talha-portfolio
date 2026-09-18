@@ -3,7 +3,7 @@ import { SERVICES } from '@/lib/constants';
 
 export const Services = () => {
   return (
-    <section id="services" className="content-section">
+    <section id="services" className="content-section diffuse-reveal">
       <div className="section-label">03 // What I build</div>
 
       <div style={{ marginBottom: '40px' }}>
@@ -14,7 +14,7 @@ export const Services = () => {
 
       <div className="services-list">
         {SERVICES.map((service, idx) => (
-          <div key={idx} className="service-item">
+          <div key={idx} className="service-item diffuse-reveal">
             <div className="service-header">
               <h3 className="service-title">{service.title}</h3>
               <p className="service-desc">{service.desc}</p>

@@ -3,7 +3,7 @@ import { TALHA_CONFIG } from '@/lib/constants';
 
 export const Contact = () => {
   return (
-    <section id="contact" className="contact-section">
+    <section id="contact" className="contact-section diffuse-reveal">
       <div className="section-label">08 // Contact &amp; Collaboration</div>
 
       <h2 className="contact-headline">

@@ -4,7 +4,7 @@ import { PROJECTS } from '@/lib/constants';
 
 export const Projects = () => {
   return (
-    <section id="work" className="content-section">
+    <section id="work" className="content-section diffuse-reveal">
       <div className="section-label">04 // Projects</div>
 
       <div style={{ marginBottom: '40px' }}>
@@ -15,7 +15,7 @@ export const Projects = () => {
 
       <div className="projects-list">
         {PROJECTS.map((project, idx) => (
-          <div key={idx} className="project-item">
+          <div key={idx} className="project-item diffuse-reveal">
             <a
               href={project.link}
               target="_blank"

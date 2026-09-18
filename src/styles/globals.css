@@ -815,8 +815,98 @@ a {
   margin-top: 4px;
 }
 
-.experience-bullets-clean {
+.experience-pillars-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.experience-pillar-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.experience-expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin-top: 18px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background: var(--pill-bg);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.experience-expand-btn:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+.experience-expand-btn.active {
+  background: var(--surface-hover);
+  border-color: var(--border-strong);
+  color: var(--emerald);
+}
+
+.chevron-icon {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chevron-icon.rotate-180 {
+  transform: rotate(180deg);
+}
+
+/* ACCORDION DROPDOWN ANIMATION */
+.experience-accordion {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 14px;
+}
+
+.experience-accordion.expanded {
+  grid-template-rows: 1fr;
+}
+
+.experience-accordion-inner {
+  overflow: hidden;
+}
+
+.experience-accordion-content {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(14px);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.experience-accordion.expanded .experience-accordion-content {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0);
+}
+
+.experience-bullets-clean {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -843,6 +933,23 @@ a {
 .bullet-lead {
   color: var(--text-primary);
   font-weight: 600;
+}
+
+/* DIFFUSE SCROLL REVEAL ANIMATION */
+.diffuse-reveal {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(22px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, filter, transform;
+}
+
+.diffuse-reveal.diffuse-in-view {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0);
 }
 
 /* ACHIEVEMENTS GRID */

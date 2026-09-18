@@ -4,7 +4,7 @@ import { TALHA_CONFIG } from '@/lib/constants';
 
 export const About = () => {
   return (
-    <section id="about" className="content-section">
+    <section id="about" className="content-section diffuse-reveal">
       <div className="section-label">07 // Engineering Philosophy &amp; Approach</div>
 
       <p className="about-paragraph">
@@ -12,21 +12,21 @@ export const About = () => {
       </p>
 
       <div className="about-grid">
-        <div className="about-col">
+        <div className="about-col diffuse-reveal">
           <span className="about-col-label">Operating Model</span>
           <p className="about-col-value">{TALHA_CONFIG.location}</p>
           <p className="about-col-sub">Distributed cloud collaboration</p>
         </div>
 
-        <div className="about-col">
+        <div className="about-col diffuse-reveal">
           <span className="about-col-label">Credentials</span>
           <p className="about-col-value">AWS Solutions Architect &amp; DevOps</p>
           <p className="about-col-sub">BS Software Engineering (UMT)</p>
         </div>
 
-        <div className="about-col">
+        <div className="about-col diffuse-reveal">
           <span className="about-col-label">Platform Core</span>
-          <p className="about-col-value">Multi-Account AWS &amp; Amazon EKS</p>
+          <p className="about-col-value">Multi-Cloud, AWS &amp; Amazon EKS</p>
           <p className="about-col-sub">Zero-Trust Security &amp; GitOps Delivery</p>
         </div>
       </div>

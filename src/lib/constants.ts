@@ -51,7 +51,7 @@ export const TALHA_CONFIG = {
   brandName: 'Talha',
   role: 'DevOps & Platform Engineer',
   tagline: 'AWS Infrastructure • Kubernetes • Cloud Security • Automation • Reliability',
-  shortBio: 'DevOps Engineer with 3+ years of hands-on experience in Platform Engineering working on AWS multi-account infrastructure, Kubernetes platforms, cloud security, automation, observability, and production reliability. Operating worldwide.',
+  shortBio: 'DevOps Engineer with 3+ years of hands-on experience in Platform Engineering working on multi-cloud and multi-account AWS infrastructure, Kubernetes platforms, cloud security, automation, observability, and production reliability. Operating worldwide.',
   location: 'Remote · Working Worldwide',
   availability: 'Available for DevOps & Platform Engineering Worldwide',
   email: 'talha32rehman@gmail.com',
@@ -64,7 +64,7 @@ export const TALHA_CONFIG = {
 };
 
 export const METRICS: MetricItem[] = [
-  { value: '37+', label: 'AWS accounts supported & secured' },
+  { value: '37+', label: 'multi-cloud & AWS accounts supported' },
   { value: '3+', label: 'years hands-on platform engineering' },
   { value: '80%', label: 'faster deployments (20m to 4m)' },
   { value: '50%', label: 'reduction in MTTR via LGTM & Datadog' },
@@ -73,8 +73,8 @@ export const METRICS: MetricItem[] = [
 export const KEY_ACHIEVEMENTS: AchievementItem[] = [
   {
     metric: '37+ Accounts',
-    title: 'Multi-Account AWS Architecture',
-    detail: 'Designed & managed multi-account AWS landing zones using Transit Gateway, PrivateLink, IAM least-privilege, and VPC networking for distributed environments.',
+    title: 'Multi-Cloud & Multi-Account Architecture',
+    detail: 'Designed & managed multi-cloud and multi-account AWS landing zones across 37+ accounts with Transit Gateway, PrivateLink, IAM least-privilege, and Azure cloud integration.',
   },
   {
     metric: '80% Faster',
@@ -105,12 +105,12 @@ export const KEY_ACHIEVEMENTS: AchievementItem[] = [
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
-    company: 'Enterprise Cloud & Kubernetes Platform',
+    company: 'Enterprise Multi-Cloud & Multi-Account Platform',
     role: 'DevOps & Platform Engineer',
     period: 'Jan 2023 – Present',
     location: 'Remote · Worldwide',
     isCurrent: true,
-    description: 'Operating on the engineering side of cloud architecture across 37+ AWS accounts, production Amazon EKS clusters, Kubernetes security hardening, Istio egress controls, and GitOps automation.',
+    description: 'Operating on the engineering side of multi-cloud and multi-account cloud architecture across 37+ AWS & Azure accounts, production Amazon EKS clusters, Kubernetes security hardening, Istio egress controls, and GitOps automation.',
     highlights: [
       'Cloud Infrastructure & Solution Design: Designed and supported cloud infrastructure across 37+ AWS accounts (EKS, EC2, ECS, VPC, RDS Aurora, S3, IAM, Route53, CloudWatch, ElastiCache, Transit Gateway, and PrivateLink) using modular Terraform, OpenTofu, and Terragrunt.',
       'Cross-Account Networking: Designed and maintained secure cross-account connectivity using AWS Transit Gateway, VPC PrivateLink, and tight Security Groups for distributed enterprise environments.',

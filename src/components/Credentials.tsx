@@ -4,7 +4,7 @@ import { EDUCATION_AND_CERTS } from '@/lib/constants';
 
 export const Credentials = () => {
   return (
-    <section id="credentials" className="content-section">
+    <section id="credentials" className="content-section diffuse-reveal">
       <div className="section-label">06 // Credentials &amp; Education</div>
 
       <div style={{ marginBottom: '32px' }}>
@@ -14,7 +14,7 @@ export const Credentials = () => {
       </div>
 
       <div className="credentials-grid">
-        <div className="credential-box">
+        <div className="credential-box diffuse-reveal">
           <div className="credential-icon-row">
             <GraduationCap size={20} className="credential-icon" />
             <span className="credential-badge">Academic Degree</span>
@@ -29,7 +29,7 @@ export const Credentials = () => {
         </div>
 
         {EDUCATION_AND_CERTS.certifications.map((cert, idx) => (
-          <div key={idx} className="credential-box">
+          <div key={idx} className="credential-box diffuse-reveal">
             <div className="credential-icon-row">
               <Award size={20} className="credential-icon" />
               <span className="credential-badge">Industry Certified</span>

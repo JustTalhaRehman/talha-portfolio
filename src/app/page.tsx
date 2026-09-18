@@ -11,10 +11,12 @@ import { Credentials } from '@/components/Credentials';
 import { About } from '@/components/About';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
+import { ScrollObserver } from '@/components/ScrollObserver';
 
 export default function HomePage() {
   return (
     <>
+      <ScrollObserver />
       <Navbar />
       <main className="page-wrap">
         <Hero />
