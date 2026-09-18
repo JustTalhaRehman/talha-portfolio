@@ -32,17 +32,9 @@ export const Navbar = () => {
             className="resume-pill-btn"
             title="Request CV"
           >
-            <FileDown size={13} />
-            <span>CV</span>
+            <FileDown size={14} className="resume-icon" />
+            <span>Request CV</span>
           </a>
-
-          <div className="status-pill" title="Current Status">
-            <span className="status-dot">
-              <span className="status-dot-ping" />
-              <span className="status-dot-core" />
-            </span>
-            <span>Available</span>
-          </div>
 
           <button
             id="theme-toggle"
