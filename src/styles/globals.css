@@ -994,29 +994,33 @@ a {
 }
 
 .modal-action-primary {
-  background: var(--text-primary);
-  color: var(--bg-base);
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: 1px solid transparent;
 }
 
 .modal-action-primary:hover {
-  opacity: 0.92;
+  background: var(--btn-primary-hover);
   transform: translateY(-1px);
 }
 
 .modal-action-primary .action-icon-wrap {
-  color: var(--bg-base);
+  color: var(--btn-primary-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-action-primary .action-label {
   font-size: 13px;
   font-weight: 600;
-  color: var(--bg-base);
+  color: var(--btn-primary-text);
 }
 
 .modal-action-primary .action-hint {
   font-size: 11px;
   opacity: 0.8;
-  color: var(--bg-base);
+  color: var(--btn-primary-text);
 }
 
 .modal-action-secondary {
