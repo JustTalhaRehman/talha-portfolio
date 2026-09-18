@@ -16,7 +16,8 @@ export const Hero = () => {
       </h1>
 
       <h2 className="hero-lead">
-        {TALHA_CONFIG.tagline}
+        <span className="hero-lead-line">AWS Infrastructure • Kubernetes • Cloud Security</span>
+        <span className="hero-lead-line">Automation • Reliability</span>
       </h2>
 
       <p className="hero-sub">

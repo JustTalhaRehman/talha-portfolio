@@ -48,7 +48,7 @@ export interface AchievementItem {
 
 export const TALHA_CONFIG = {
   name: 'Talha Rehman',
-  brandName: 'Talha.',
+  brandName: 'Talha',
   role: 'DevOps & Platform Engineer',
   tagline: 'AWS Infrastructure • Kubernetes • Cloud Security • Automation • Reliability',
   shortBio: 'DevOps Engineer with 3+ years of hands-on experience in Platform Engineering working on AWS multi-account infrastructure, Kubernetes platforms, cloud security, automation, observability, and production reliability. Operating worldwide.',
