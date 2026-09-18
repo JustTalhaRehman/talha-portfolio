@@ -5,7 +5,7 @@ import { PROJECTS } from '@/lib/constants';
 export const Projects = () => {
   return (
     <section id="work" className="content-section diffuse-reveal">
-      <div className="section-label">01 // Selected Projects</div>
+      <div className="section-label">Selected Projects</div>
 
       <div style={{ marginBottom: '40px' }}>
         <p style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: '600', letterSpacing: '-0.025em', color: 'var(--text-primary)', lineHeight: 1.45 }}>

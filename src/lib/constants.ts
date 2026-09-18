@@ -31,12 +31,12 @@ export const TALHA_CONFIG = {
   shortBio: 'DevOps & Platform Engineer operating across multi-account AWS, Kubernetes (EKS), Terraform, and GitOps for high-scale distributed systems worldwide.',
   location: 'Remote · Working Worldwide',
   availability: 'Available for Cloud & Platform Engineering Worldwide',
-  email: 'talha32rehman@gmail.com',
+  email: 'talha@devistio.com',
   phone: '+92 315 6569204',
   whatsappUrl: 'https://wa.me/923156569204',
   linkedinUrl: 'https://linkedin.com/in/talha-rehman-devops',
   githubUrl: 'https://github.com/JustTalhaRehman',
-  resumeUrl: 'mailto:talha32rehman@gmail.com?subject=Talha%20Rehman%20DevOps%20CV%20Request',
+  resumeUrl: 'mailto:talha@devistio.com?subject=Talha%20Rehman%20DevOps%20CV%20Request',
 };
 
 export const METRICS: MetricItem[] = [

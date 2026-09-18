@@ -4,7 +4,7 @@ import { TALHA_CONFIG } from '@/lib/constants';
 export const About = () => {
   return (
     <section id="about" className="content-section diffuse-reveal">
-      <div className="section-label">04 // About</div>
+      <div className="section-label">About</div>
 
       <p className="about-paragraph">
         I build reliable, automated, and self-healing cloud platforms. My work sits at the foundation: designing resilient multi-cloud architectures, eliminating operational toil, and leaving systems resilient against failure.

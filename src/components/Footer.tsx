@@ -6,7 +6,7 @@ export const Footer = () => {
     <footer className="simple-footer">
       <div className="page-wrap">
         <p>
-          &copy; {new Date().getFullYear()} {TALHA_CONFIG.name}. Built with Next.js 15 &amp; React 19.
+          &copy; {new Date().getFullYear()} {TALHA_CONFIG.name}. All rights reserved.
         </p>
       </div>
     </footer>

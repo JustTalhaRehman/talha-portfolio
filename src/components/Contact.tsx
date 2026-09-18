@@ -4,7 +4,7 @@ import { TALHA_CONFIG } from '@/lib/constants';
 export const Contact = () => {
   return (
     <section id="contact" className="contact-section diffuse-reveal">
-      <div className="section-label">05 // Contact</div>
+      <div className="section-label">Contact</div>
 
       <h2 className="contact-headline">
         Have infrastructure worth automating or scaling?

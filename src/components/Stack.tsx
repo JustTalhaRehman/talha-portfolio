@@ -4,7 +4,7 @@ import { STACK } from '@/lib/constants';
 export const Stack = () => {
   return (
     <section id="skills" className="content-section diffuse-reveal">
-      <div className="section-label">03 // Tech Stack</div>
+      <div className="section-label">Tech Stack</div>
 
       <div className="stack-list">
         {STACK.map((group, idx) => (
