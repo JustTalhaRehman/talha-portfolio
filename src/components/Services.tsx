@@ -4,7 +4,7 @@ import { SERVICES } from '@/lib/constants';
 export const Services = () => {
   return (
     <section id="services" className="content-section">
-      <div className="section-label">02 // What I build</div>
+      <div className="section-label">03 // What I build</div>
 
       <div style={{ marginBottom: '40px' }}>
         <p style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: '600', letterSpacing: '-0.025em', color: 'var(--text-primary)' }}>
