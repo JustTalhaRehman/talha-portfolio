@@ -34,7 +34,7 @@ export const TALHA_CONFIG = {
   email: 'talha@devistio.com',
   phone: '+92 315 6569204',
   whatsappUrl: 'https://wa.me/923156569204',
-  linkedinUrl: 'https://linkedin.com/in/talha-rehman-devops',
+  linkedinUrl: 'https://www.linkedin.com/in/talha-rehman-devops-engineer/',
   githubUrl: 'https://github.com/JustTalhaRehman',
   resumeUrl: 'mailto:talha@devistio.com?subject=Request%20for%20CV%20%E2%80%94%20Talha%20Rehman&body=Hi%20Talha%2C%0A%0AI%20came%20across%20your%20portfolio%20(talha.devistio.com)%20and%20would%20like%20to%20request%20an%20updated%20copy%20of%20your%20CV%20%2F%20Resume.%0A%0ALooking%20forward%20to%20connecting%20with%20you.%0A%0ABest%20regards%2C',
 };

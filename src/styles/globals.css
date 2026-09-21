@@ -511,11 +511,13 @@ a {
   border: 1px solid var(--border);
   border-radius: var(--radius-full);
   text-align: center;
-  transition: var(--transition-fast);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .trust-card:hover {
+  transform: translateY(-2px);
   border-color: var(--border-strong);
+  box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.2);
 }
 
 .trust-value {
@@ -524,6 +526,13 @@ a {
   letter-spacing: -0.04em;
   line-height: 1;
   color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.trust-number {
+  display: inline-block;
+  will-change: transform;
 }
 
 .trust-label {
