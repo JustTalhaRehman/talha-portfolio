@@ -81,20 +81,20 @@ export const CAPABILITIES: CapabilityItem[] = [
 
 export const PROJECTS: ProjectItem[] = [
   {
-    title: 'CI/CD Automation Platform',
-    desc: 'End-to-end automated CI/CD platform using GitHub Actions to automate builds, container testing, and multi-environment deployments.',
-    subdesc: 'Features automated linting, containerized testing (Postgres + Redis), Trivy vulnerability scanning, ECR push, and staging-to-production manual approval gates supporting 100+ monthly builds.',
-    link: 'https://github.com/JustTalhaRehman/Talha-s-CI-CD-Portfolio',
-    github: 'https://github.com/JustTalhaRehman/Talha-s-CI-CD-Portfolio',
-    tags: ['GitHub Actions', 'Docker', 'Kubernetes', 'CI/CD', 'Trivy', 'Slack Alerts'],
+    title: 'EKS Platform Engineering',
+    desc: 'Production-ready Terraform infrastructure for deploying Amazon EKS clusters with essential platform add-ons and GitOps automation.',
+    subdesc: 'Two-tier architecture featuring IRSA security, multi-AZ VPC networking, External DNS, External Secrets, Cluster Autoscaler, KEDA, and ArgoCD for scalable Kubernetes platforms on AWS.',
+    link: 'https://github.com/JustTalhaRehman/eks-platform-engineering',
+    github: 'https://github.com/JustTalhaRehman/eks-platform-engineering',
+    tags: ['Amazon EKS', 'Terraform', 'ArgoCD', 'KEDA', 'IRSA', 'Cluster Autoscaler'],
   },
   {
-    title: 'Grafana LGTM Observability Stack',
-    desc: 'Centralized production telemetry pipeline unifying logs, metrics, distributed traces, and continuous profiling for cloud-native workloads.',
-    subdesc: 'Combines Grafana, Loki, Mimir, Tempo, Alloy collector, and Prometheus to correlate telemetry across microservices from a single observability pane of glass.',
-    link: 'https://github.com/JustTalhaRehman/observability-stack',
-    github: 'https://github.com/JustTalhaRehman/observability-stack',
-    tags: ['Grafana', 'Loki', 'Mimir', 'Tempo', 'Alloy', 'Prometheus', 'Distributed Tracing'],
+    title: 'Kubernetes Secrets Management',
+    desc: 'Production-ready secrets synchronization from AWS Secrets Manager to Kubernetes without storing sensitive credentials in Git.',
+    subdesc: 'Leverages External Secrets Operator and IAM Roles for Service Accounts (IRSA) for secure, credential-less authentication and automated secret rotation.',
+    link: 'https://github.com/JustTalhaRehman/k8s-secrets-management',
+    github: 'https://github.com/JustTalhaRehman/k8s-secrets-management',
+    tags: ['Kubernetes', 'External Secrets', 'AWS Secrets Manager', 'IRSA', 'IAM', 'Security'],
   },
   {
     title: 'Enterprise Multi-Account AWS Landing Zone',
