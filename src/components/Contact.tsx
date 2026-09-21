@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { TALHA_CONFIG } from '@/lib/constants';
 
@@ -14,7 +16,14 @@ export const Contact = () => {
         Send architectural requirements, platform challenges, or current codebases. I collaborate with engineering teams worldwide and respond with practical next steps.
       </p>
 
-      <a href={`mailto:${TALHA_CONFIG.email}`} className="contact-email-link">
+      <a
+        href={`mailto:${TALHA_CONFIG.email}`}
+        className="contact-email-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.dispatchEvent(new CustomEvent('open-email-modal', { detail: { mode: 'contact' } }));
+        }}
+      >
         {TALHA_CONFIG.email}
       </a>
 
@@ -53,6 +62,10 @@ export const Contact = () => {
         <a
           href={TALHA_CONFIG.resumeUrl}
           className="contact-channel-item"
+          onClick={(e) => {
+            e.preventDefault();
+            window.dispatchEvent(new CustomEvent('open-request-cv'));
+          }}
         >
           Request CV
         </a>

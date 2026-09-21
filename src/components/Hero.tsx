@@ -93,6 +93,10 @@ export const Hero = () => {
           className="social-circle"
           aria-label="Email Contact"
           title="Email"
+          onClick={(e) => {
+            e.preventDefault();
+            window.dispatchEvent(new CustomEvent('open-email-modal', { detail: { mode: 'contact' } }));
+          }}
         >
           <Mail size={16} />
         </a>
@@ -101,6 +105,10 @@ export const Hero = () => {
           className="social-circle"
           aria-label="Request CV"
           title="Request CV"
+          onClick={(e) => {
+            e.preventDefault();
+            window.dispatchEvent(new CustomEvent('open-request-cv'));
+          }}
         >
           <FileText size={16} />
         </a>

@@ -6,12 +6,52 @@ import { TALHA_CONFIG } from '@/lib/constants';
 
 export const RequestCvModal = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [mode, setMode] = useState<'cv' | 'contact'>('cv');
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    const handleOpen = () => setIsOpen(true);
-    window.addEventListener('open-request-cv', handleOpen);
-    return () => window.removeEventListener('open-request-cv', handleOpen);
+    const handleOpenCv = () => {
+      setMode('cv');
+      setIsOpen(true);
+    };
+
+    const handleOpenEmail = (e?: Event) => {
+      const customEvent = e as CustomEvent<{ mode?: 'cv' | 'contact' }>;
+      setMode(customEvent?.detail?.mode === 'cv' ? 'cv' : 'contact');
+      setIsOpen(true);
+    };
+
+    const handleGlobalClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement)?.closest('a');
+      if (!target) return;
+      const href = target.getAttribute('href');
+      if (href && href.startsWith('mailto:')) {
+        e.preventDefault();
+        const text = (target.textContent || '').toLowerCase();
+        const hrefLower = href.toLowerCase();
+        if (
+          hrefLower.includes('cv') ||
+          hrefLower.includes('resume') ||
+          text.includes('cv') ||
+          text.includes('resume')
+        ) {
+          setMode('cv');
+        } else {
+          setMode('contact');
+        }
+        setIsOpen(true);
+      }
+    };
+
+    window.addEventListener('open-request-cv', handleOpenCv);
+    window.addEventListener('open-email-modal', handleOpenEmail);
+    document.addEventListener('click', handleGlobalClick);
+
+    return () => {
+      window.removeEventListener('open-request-cv', handleOpenCv);
+      window.removeEventListener('open-email-modal', handleOpenEmail);
+      document.removeEventListener('click', handleGlobalClick);
+    };
   }, []);
 
   useEffect(() => {
@@ -32,9 +72,23 @@ export const RequestCvModal = () => {
 
   if (!isOpen) return null;
 
-  const subject = encodeURIComponent('Request for CV — Talha Rehman');
+  const isCv = mode === 'cv';
+
+  const title = isCv ? 'Request CV' : 'Send an Email';
+  const subtitle = `Send to ${TALHA_CONFIG.email}`;
+  const desc = isCv
+    ? 'Choose your preferred way to send the request. The email recipient, subject, and message are prefilled for you.'
+    : 'Choose your preferred way to get in touch. The email recipient and a starter note are prefilled for you.';
+
+  const subject = encodeURIComponent(
+    isCv
+      ? 'Request for CV — Talha Rehman'
+      : 'Platform & DevOps Engineering Inquiry — Talha Rehman'
+  );
   const body = encodeURIComponent(
-    'Hi Talha,\n\nI came across your portfolio (talha.devistio.com) and would like to request an updated copy of your CV / Resume for platform and DevOps engineering opportunities.\n\nLooking forward to hearing from you.\n\nBest regards,'
+    isCv
+      ? 'Hi Talha,\n\nI came across your portfolio (talha.devistio.com) and would like to request an updated copy of your CV / Resume for platform and DevOps engineering opportunities.\n\nLooking forward to hearing from you.\n\nBest regards,'
+      : 'Hi Talha,\n\nI came across your portfolio (talha.devistio.com) and would like to connect regarding cloud architecture, Kubernetes platforms, or engineering opportunities.\n\nLooking forward to speaking with you.\n\nBest regards,'
   );
 
   const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${TALHA_CONFIG.email}&su=${subject}&body=${body}`;
@@ -58,11 +112,11 @@ export const RequestCvModal = () => {
         <div className="modal-header">
           <div className="modal-title-group">
             <div className="modal-icon-badge">
-              <FileDown size={18} />
+              {isCv ? <FileDown size={18} /> : <Mail size={18} />}
             </div>
             <div>
-              <h3 id="modal-title" className="modal-title">Request CV</h3>
-              <p className="modal-subtitle">Send to {TALHA_CONFIG.email}</p>
+              <h3 id="modal-title" className="modal-title">{title}</h3>
+              <p className="modal-subtitle">{subtitle}</p>
             </div>
           </div>
           <button
@@ -75,9 +129,7 @@ export const RequestCvModal = () => {
           </button>
         </div>
 
-        <p className="modal-desc">
-          Choose your preferred way to send the request. The email recipient, subject, and message are prefilled for you.
-        </p>
+        <p className="modal-desc">{desc}</p>
 
         <div className="modal-actions-list">
           {/* Gmail Web Option */}
