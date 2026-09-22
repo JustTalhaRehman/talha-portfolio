@@ -11,6 +11,7 @@ export interface ProjectItem {
   link: string;
   github?: string;
   tags: string[];
+  highlights?: string[];
 }
 
 export interface StackCategory {
@@ -87,6 +88,12 @@ export const PROJECTS: ProjectItem[] = [
     link: 'https://github.com/JustTalhaRehman/eks-platform-engineering',
     github: 'https://github.com/JustTalhaRehman/eks-platform-engineering',
     tags: ['Amazon EKS', 'Terraform', 'ArgoCD', 'KEDA', 'IRSA', 'Cluster Autoscaler'],
+    highlights: [
+      'Multi-AZ VPC architecture with private subnets and NAT gateways',
+      'IAM Roles for Service Accounts (IRSA) for credential-less AWS authorization',
+      'Cluster Autoscaler & KEDA for workload-driven horizontal pod scaling',
+      'Declarative ArgoCD GitOps pipeline for continuous reconciliation',
+    ],
   },
   {
     title: 'Kubernetes Secrets Management',
@@ -95,6 +102,12 @@ export const PROJECTS: ProjectItem[] = [
     link: 'https://github.com/JustTalhaRehman/k8s-secrets-management',
     github: 'https://github.com/JustTalhaRehman/k8s-secrets-management',
     tags: ['Kubernetes', 'External Secrets', 'AWS Secrets Manager', 'IRSA', 'IAM', 'Security'],
+    highlights: [
+      'External Secrets Operator integration pulling from AWS Secrets Manager',
+      'Eliminates plain-text secret storage in Git repositories and manifests',
+      'Automated secret rotation cycle with live workload synchronization',
+      'Scoped IRSA IAM roles preventing cross-namespace privilege escalation',
+    ],
   },
   {
     title: 'Enterprise Multi-Account AWS Landing Zone',
@@ -103,6 +116,12 @@ export const PROJECTS: ProjectItem[] = [
     link: 'https://github.com/JustTalhaRehman',
     github: 'https://github.com/JustTalhaRehman',
     tags: ['AWS EKS', 'Transit Gateway', 'PrivateLink', 'KMS Policies', 'Terraform', 'Terragrunt'],
+    highlights: [
+      'Centralized AWS Transit Gateway hub-and-spoke topology across 37+ accounts',
+      'VPC Endpoints & PrivateLink keeping microservices off public internet routes',
+      'Separation of Duties KMS key policies restricting unauthorized decryption',
+      'Reusable, DRY infrastructure modules provisioned via Terragrunt',
+    ],
   },
   {
     title: 'Kubernetes Kyverno & Pod Security Hardening',
@@ -111,6 +130,12 @@ export const PROJECTS: ProjectItem[] = [
     link: 'https://github.com/JustTalhaRehman',
     github: 'https://github.com/JustTalhaRehman',
     tags: ['Kyverno', 'PSS Restricted', 'PSA', 'NetworkPolicies', 'Istio Egress', 'Amazon EKS'],
+    highlights: [
+      'Kyverno admission controller enforcing PSS Restricted baseline profiles',
+      'Mandatory non-root UID execution & dropped Linux capabilities on pods',
+      'Default-deny ingress & egress NetworkPolicies across production namespaces',
+      'Istio REGISTRY_ONLY egress gateway blocking untrusted external calls',
+    ],
   },
 ];
 
