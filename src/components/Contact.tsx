@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { TALHA_CONFIG } from '@/lib/constants';
 
 export const Contact = () => {
@@ -61,22 +60,6 @@ export const Contact = () => {
         </a>
         <span className="contact-channel-separator" />
         <a
-          href={TALHA_CONFIG.devistioUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="contact-channel-item contact-devistio-link"
-          aria-label="Devistio"
-        >
-          <Image
-            src="/devistio-logo.png"
-            alt="Devistio"
-            width={72}
-            height={24}
-            className="contact-devistio-logo"
-          />
-        </span>
-        <span className="contact-channel-separator" />
-        <a
           href={TALHA_CONFIG.resumeUrl}
           className="contact-channel-item"
           onClick={(e) => {
@@ -90,4 +73,3 @@ export const Contact = () => {
     </section>
   );
 };
-
