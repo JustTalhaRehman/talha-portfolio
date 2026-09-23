@@ -1198,6 +1198,27 @@ a {
   color: var(--text-primary);
 }
 
+.contact-devistio-link {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.contact-devistio-link:hover {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+.contact-devistio-logo {
+  height: 16px;
+  width: auto;
+}
+
+[data-theme="light"] .contact-devistio-logo {
+  filter: invert(1);
+}
+
 .contact-channel-separator {
   width: 1px;
   height: 12px;
@@ -1271,7 +1292,6 @@ a {
 .footer-logo {
   height: 20px;
   width: auto;
-  margin: 0 auto 12px auto;
   display: block;
   opacity: 0.7;
   transition: opacity 0.2s ease, transform 0.2s ease;
@@ -1284,6 +1304,32 @@ a {
 
 [data-theme="light"] .footer-logo {
   filter: invert(1);
+}
+
+.footer-brands {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.footer-brand-sep {
+  width: 1px;
+  height: 16px;
+  background-color: var(--border-strong);
+  display: block;
+  opacity: 0.6;
+}
+
+.footer-devistio-link {
+  display: flex;
+  align-items: center;
+}
+
+.footer-devistio-logo {
+  height: 22px;
+  width: auto;
 }
 
 @media (max-width: 900px) {
