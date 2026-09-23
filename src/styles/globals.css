@@ -114,6 +114,23 @@ a {
   align-items: center;
 }
 
+.nav-brand-logo {
+  height: 25px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-brand:hover .nav-brand-logo {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+[data-theme="light"] .nav-brand-logo {
+  filter: invert(1);
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -1245,10 +1262,28 @@ a {
 /* FOOTER */
 .simple-footer {
   border-top: 1px solid var(--border);
-  padding: 28px 0;
+  padding: 32px 0 28px 0;
   text-align: center;
   font-size: 12px;
   color: var(--text-muted);
+}
+
+.footer-logo {
+  height: 20px;
+  width: auto;
+  margin: 0 auto 12px auto;
+  display: block;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-logo:hover {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+[data-theme="light"] .footer-logo {
+  filter: invert(1);
 }
 
 @media (max-width: 900px) {

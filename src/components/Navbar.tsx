@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Sun, Moon, FileDown } from 'lucide-react';
 import { useTheme } from '@/hooks/useTheme';
 import { TALHA_CONFIG } from '@/lib/constants';
@@ -13,7 +14,14 @@ export const Navbar = () => {
     <header className="site-nav">
       <div className="nav-inner">
         <Link href="#hero" className="nav-brand" aria-label="Talha Rehman">
-          {TALHA_CONFIG.brandName}
+          <Image
+            src="/talha-portfolio-logo.png"
+            alt="Talha"
+            width={72}
+            height={26}
+            priority
+            className="nav-brand-logo"
+          />
         </Link>
 
         <nav aria-label="Main Navigation">
