@@ -34,7 +34,7 @@ export const About = () => {
 
         <div className="about-content-panel">
           <p className="about-paragraph">
-            I build reliable, automated, and self-healing cloud platforms. My work sits at the foundation: designing resilient multi-cloud architectures, eliminating operational toil, and leaving systems resilient against failure.
+            I build reliable, automated, self-healing cloud platforms. My work sits at the foundation: resilient multi-cloud architecture, less operational toil, and systems that stay secure, auditable, and compliant as they scale.
           </p>
 
           <div className="about-pillars-grid">
@@ -66,7 +66,7 @@ export const About = () => {
             <div className="about-col diffuse-reveal">
               <span className="about-col-label">Security Mindset</span>
               <p className="about-col-value">
-                Separation of Duties, IAM least-privilege, Kyverno admission policies, and default-deny network controls.
+                Separation of Duties, IAM least-privilege, Kyverno admission policies, default-deny networking, and continuous compliance checks with audit-ready logs.
               </p>
             </div>
 
