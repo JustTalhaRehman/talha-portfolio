@@ -29,7 +29,7 @@ export const TALHA_CONFIG = {
   brandName: 'Talha',
   role: 'DevOps & Platform Engineer',
   tagline: 'Multi-Cloud Infrastructure · Kubernetes · Production Reliability',
-  shortBio: 'DevOps & Platform Engineer operating across multi-account AWS, Kubernetes (EKS), Terraform, and GitOps for high-scale distributed systems worldwide.',
+  shortBio: 'DevOps & Platform Engineer building secure, compliance-ready platforms on multi-account AWS, Kubernetes (EKS), Terraform, and GitOps for high-scale distributed systems worldwide.',
   location: 'Remote · Working Worldwide',
   availability: 'Available for Cloud & Platform Engineering Worldwide',
   email: 'talha@devistio.com',
@@ -55,7 +55,7 @@ export const CAPABILITIES: CapabilityItem[] = [
   },
   {
     title: 'Kubernetes Platforms & DevSecOps',
-    desc: 'Production EKS engineering with Kyverno policy enforcement, Pod Security Standards (PSS Restricted profile), and default-deny NetworkPolicies.',
+    desc: 'Production EKS with Kyverno policy enforcement, Pod Security Standards (Restricted profile), and default-deny NetworkPolicies.',
     tags: ['Amazon EKS', 'Kyverno', 'PSS Restricted', 'NetworkPolicies', 'Helm', 'KEDA'],
   },
   {
@@ -75,8 +75,13 @@ export const CAPABILITIES: CapabilityItem[] = [
   },
   {
     title: 'Infrastructure as Code & Governance',
-    desc: 'Modular, version-controlled IaC using Terraform, OpenTofu, and Terragrunt with state locking, reviewable pull requests, and automated validation.',
+    desc: 'Modular, version-controlled IaC using Terraform, OpenTofu, and Terragrunt with state locking, reviewed pull requests, and automated validation.',
     tags: ['Terraform', 'OpenTofu', 'Terragrunt', 'Ansible', 'AWS SSM', 'Python Automation'],
+  },
+  {
+    title: 'Compliance & Policy-as-Code Auditing',
+    desc: 'Automated compliance checks across cloud and Kubernetes: policy-as-code validation in CI, IAM least-privilege and KMS access reviews, and audit-ready logging and change history via GitOps.',
+    tags: ['Policy-as-Code', 'Kyverno Reports', 'IAM Access Reviews', 'CloudTrail & Audit Logs', 'CIS-Aligned Hardening', 'Drift Detection'],
   },
 ];
 
@@ -131,7 +136,7 @@ export const PROJECTS: ProjectItem[] = [
     github: 'https://github.com/JustTalhaRehman',
     tags: ['Kyverno', 'PSS Restricted', 'PSA', 'NetworkPolicies', 'Istio Egress', 'Amazon EKS'],
     highlights: [
-      'Kyverno admission controller enforcing PSS Restricted baseline profiles',
+      'Kyverno admission controller enforcing PSS Restricted baseline profiles with policy audit reports',
       'Mandatory non-root UID execution & dropped Linux capabilities on pods',
       'Default-deny ingress & egress NetworkPolicies across production namespaces',
       'Istio REGISTRY_ONLY egress gateway blocking untrusted external calls',
@@ -208,6 +213,7 @@ export const STACK: StackCategory[] = [
     items: [
       'AWS IAM (Least Privilege)',
       'KMS Policies (Separation of Duties)',
+      'Compliance Checks (Policy-as-Code, Audit Logging, CIS-Aligned Hardening)',
       'Kyverno Policy Enforcement',
       'Pod Security Standards (Restricted)',
       'securityContext Hardening',
