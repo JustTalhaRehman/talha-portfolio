@@ -34,7 +34,7 @@ export const About = () => {
 
         <div className="about-content-panel">
           <p className="about-paragraph">
-            I build reliable, automated, self-healing cloud platforms. My work sits at the foundation: resilient multi-cloud architecture, less operational toil, and systems that stay secure, auditable, and compliant as they scale.
+            I design and operate secure, compliance-ready cloud platforms for enterprise and regulated-industry teams. My work spans the full platform stack: resilient multi-account AWS architecture, Kubernetes hardening aligned to CIS Benchmarks and HIPAA / SOC 2 / PCI DSS controls, zero-touch GitOps delivery, and telemetry-driven reliability — built to pass audits and stay up in production.
           </p>
 
           <div className="about-pillars-grid">
