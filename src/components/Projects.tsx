@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowUpRight, Github, ChevronDown, CheckCircle2, Layers } from 'lucide-react';
+import { ArrowUpRight, Github, ChevronDown, CheckCircle2, Layers, BookOpen } from 'lucide-react';
 import { PROJECTS, ProjectItem } from '@/lib/constants';
 
 const ProjectCard = ({ project }: { project: ProjectItem }) => {
@@ -42,6 +42,19 @@ const ProjectCard = ({ project }: { project: ProjectItem }) => {
             >
               <Github size={13} />
               <span>Repository</span>
+              <ArrowUpRight size={12} />
+            </a>
+          )}
+
+          {project.mediumUrl && (
+            <a
+              href={project.mediumUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-source-btn"
+            >
+              <BookOpen size={13} />
+              <span>Read Article</span>
               <ArrowUpRight size={12} />
             </a>
           )}

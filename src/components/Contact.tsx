@@ -51,6 +51,15 @@ export const Contact = () => {
         </a>
         <span className="contact-channel-separator" />
         <a
+          href={TALHA_CONFIG.mediumUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-channel-item"
+        >
+          Medium
+        </a>
+        <span className="contact-channel-separator" />
+        <a
           href={TALHA_CONFIG.whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"

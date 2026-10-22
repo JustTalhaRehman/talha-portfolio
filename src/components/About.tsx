@@ -40,8 +40,8 @@ export const About = () => {
           <div className="about-pillars-grid">
             <div className="about-col diffuse-reveal">
               <span className="about-col-label">Operating Model</span>
-              <p className="about-col-value">{TALHA_CONFIG.location}</p>
-              <p className="about-col-sub">Distributed cloud collaboration</p>
+              <p className="about-col-value">Remote &amp; Relocation</p>
+              <p className="about-col-sub">Open to UAE, Europe (Germany, France, Netherlands, Poland), New Zealand &amp; Worldwide</p>
             </div>
 
             <div className="about-col diffuse-reveal">

@@ -10,6 +10,7 @@ export interface ProjectItem {
   subdesc?: string;
   link: string;
   github?: string;
+  mediumUrl?: string;
   tags: string[];
   highlights?: string[];
 }
@@ -29,15 +30,16 @@ export const TALHA_CONFIG = {
   brandName: 'Talha',
   role: 'DevOps & Platform Engineer',
   tagline: 'Multi-Cloud Infrastructure · Kubernetes · HIPAA & SOC 2 Compliant Platforms',
-  shortBio: 'DevOps & Platform Engineer designing secure, compliance-ready cloud infrastructure across 37+ AWS accounts — specializing in Kubernetes (EKS), Terraform IaC, GitOps delivery, and HIPAA / SOC 2 / CIS-aligned platform hardening for enterprise and regulated-industry workloads worldwide.',
-  location: 'Remote · Working Worldwide',
-  availability: 'Available for Cloud, Platform & Compliance Engineering Worldwide',
+  shortBio: 'DevOps & Platform Engineer designing secure, compliance-ready cloud infrastructure across 37+ AWS accounts — specializing in Kubernetes (EKS, ECS, Fargate), Terraform IaC, GitOps delivery, and HIPAA / SOC 2 / CIS-aligned platform hardening. Available for remote and relocation roles in UAE, Germany, France, Netherlands, Poland, Switzerland, New Zealand, and worldwide.',
+  location: 'Remote · Available Worldwide',
+  availability: 'Open to Remote & Relocation — UAE · Germany · France · Netherlands · Poland · New Zealand · Worldwide',
   email: 'talha@devistio.com',
   phone: '+92 315 6569204',
   whatsappUrl: 'https://wa.me/923156569204',
   linkedinUrl: 'https://www.linkedin.com/in/talha-rehman-devops-engineer/',
   githubUrl: 'https://github.com/JustTalhaRehman',
   devistioUrl: 'https://devistio.com',
+  mediumUrl: 'https://medium.com/@talha32rehman',
   resumeUrl: 'mailto:talha@devistio.com?subject=Request%20for%20CV%20%E2%80%94%20Talha%20Rehman&body=Hi%20Talha%2C%0A%0AI%20came%20across%20your%20portfolio%20(talha.devistio.com)%20and%20would%20like%20to%20request%20an%20updated%20copy%20of%20your%20CV%20%2F%20Resume.%0A%0ALooking%20forward%20to%20connecting%20with%20you.%0A%0ABest%20regards%2C',
 };
 
@@ -141,6 +143,20 @@ export const PROJECTS: ProjectItem[] = [
       'Non-root UID enforcement and full Linux capabilities drop on every pod',
       'Default-deny ingress/egress NetworkPolicies with explicit allow rules per service',
       'Istio REGISTRY_ONLY egress gateway — blocks all undeclared external traffic',
+    ],
+  },
+  {
+    title: 'Structured Logging on AWS ECS Fargate',
+    desc: 'From noisy logs to actionable insights — a hands-on deep dive into implementing structured JSON logging on AWS ECS Fargate with FireLens, Fluent Bit, and CloudWatch Logs Insights for production observability.',
+    subdesc: 'A practical engineering walkthrough covering structured log schema design, FireLens sidecar configuration, Fluent Bit routing rules, and CloudWatch Logs Insights queries — transforming raw container output into queryable, alertable observability data aligned to production SLOs.',
+    link: 'https://medium.com/@talha32rehman/from-noisy-logs-to-actionable-insights-implementing-structured-logging-on-aws-ecs-fargate-179d5bd221e6',
+    mediumUrl: 'https://medium.com/@talha32rehman/from-noisy-logs-to-actionable-insights-implementing-structured-logging-on-aws-ecs-fargate-179d5bd221e6',
+    tags: ['AWS ECS Fargate', 'FireLens', 'Fluent Bit', 'CloudWatch Logs Insights', 'Structured Logging', 'Observability'],
+    highlights: [
+      'FireLens log router sidecar with custom Fluent Bit output configuration',
+      'Structured JSON log schema for queryable, filterable container logs',
+      'CloudWatch Logs Insights queries for error rate, latency, and SLO alerting',
+      'Zero-code-change log enrichment — metadata injected at the infrastructure layer',
     ],
   },
 ];
