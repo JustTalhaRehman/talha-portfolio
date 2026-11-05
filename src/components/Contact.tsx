@@ -1,11 +1,9 @@
-'use client';
-
 import React from 'react';
 import { TALHA_CONFIG } from '@/lib/constants';
 
 export const Contact = () => {
   return (
-    <section id="contact" className="contact-section diffuse-reveal">
+    <section tabIndex={-1} id="contact" className="contact-section diffuse-reveal">
       <div className="section-label">Contact</div>
 
       <h2 className="contact-headline">
@@ -19,10 +17,7 @@ export const Contact = () => {
       <a
         href={`mailto:${TALHA_CONFIG.email}`}
         className="contact-email-link"
-        onClick={(e) => {
-          e.preventDefault();
-          window.dispatchEvent(new CustomEvent('open-email-modal', { detail: { mode: 'contact' } }));
-        }}
+        data-email-dialog="contact"
       >
         {TALHA_CONFIG.email}
       </a>
@@ -71,10 +66,7 @@ export const Contact = () => {
         <a
           href={TALHA_CONFIG.resumeUrl}
           className="contact-channel-item"
-          onClick={(e) => {
-            e.preventDefault();
-            window.dispatchEvent(new CustomEvent('open-request-cv'));
-          }}
+          data-email-dialog="cv"
         >
           Request CV
         </a>

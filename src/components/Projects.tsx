@@ -1,15 +1,16 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 import { ArrowUpRight, Github, ChevronDown, CheckCircle2, Layers, BookOpen } from 'lucide-react';
 import { PROJECTS, ProjectItem } from '@/lib/constants';
 
 const ProjectCard = ({ project }: { project: ProjectItem }) => {
+  const panelId = useId();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="project-item diffuse-reveal">
-      <div className="project-header-row">
+      <h3 className="project-header-row">
         <a
           href={project.link}
           target="_blank"
@@ -19,7 +20,7 @@ const ProjectCard = ({ project }: { project: ProjectItem }) => {
           <span>{project.title}</span>
           <ArrowUpRight className="arrow-icon" />
         </a>
-      </div>
+      </h3>
 
       <p className="project-desc">{project.desc}</p>
 
@@ -65,6 +66,7 @@ const ProjectCard = ({ project }: { project: ProjectItem }) => {
               className={`project-expand-btn ${isOpen ? 'active' : ''}`}
               onClick={() => setIsOpen(!isOpen)}
               aria-expanded={isOpen}
+              aria-controls={panelId}
             >
               <Layers size={13} />
               <span>{isOpen ? 'Close Specs' : 'Architecture & Specs'}</span>
@@ -74,7 +76,7 @@ const ProjectCard = ({ project }: { project: ProjectItem }) => {
         </div>
       </div>
 
-      <div className={`project-deepdive-panel ${isOpen ? 'is-open' : ''}`}>
+      <div id={panelId} aria-hidden={!isOpen} className={`project-deepdive-panel ${isOpen ? 'is-open' : ''}`}>
         <div className="project-deepdive-inner">
           <div className="project-deepdive-card">
             <div className="deepdive-header">
@@ -108,8 +110,8 @@ const ProjectCard = ({ project }: { project: ProjectItem }) => {
 
 export const Projects = () => {
   return (
-    <section id="work" className="content-section diffuse-reveal">
-      <div className="section-label">Selected Projects</div>
+    <section tabIndex={-1} id="work" className="content-section diffuse-reveal">
+      <h2 className="section-label">Selected Projects</h2>
 
       <div style={{ marginBottom: '32px' }}>
         <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', fontWeight: '600', letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.45 }}>
@@ -118,8 +120,8 @@ export const Projects = () => {
       </div>
 
       <div className="projects-list">
-        {PROJECTS.map((project, idx) => (
-          <ProjectCard key={idx} project={project} />
+        {PROJECTS.map((project) => (
+          <ProjectCard key={project.title} project={project} />
         ))}
       </div>
     </section>

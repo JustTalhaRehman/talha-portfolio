@@ -30,7 +30,7 @@ export const TALHA_CONFIG = {
   brandName: 'Talha',
   role: 'DevOps & Platform Engineer',
   tagline: 'Multi-Cloud Infrastructure · Kubernetes · HIPAA & SOC 2 Compliant Platforms',
-  shortBio: 'DevOps & Platform Engineer designing secure, compliance-ready cloud infrastructure across 37+ AWS accounts — specializing in Kubernetes (EKS, ECS, Fargate), Terraform IaC, GitOps delivery, and HIPAA / SOC 2 / CIS-aligned platform hardening. Available for remote and relocation roles in UAE, Germany, France, Netherlands, Poland, Switzerland, New Zealand, and worldwide.',
+  shortBio: 'I build AWS infrastructure, Kubernetes platforms and GitOps pipelines for production teams. My work spans multi-account networking, Terraform automation, and platform security. Open to remote and relocation opportunities.',
   location: 'Remote · Available Worldwide',
   availability: 'Open to Remote & Relocation — UAE · Germany · France · Netherlands · Poland · New Zealand · Worldwide',
   email: 'talha@devistio.com',
@@ -142,7 +142,7 @@ export const PROJECTS: ProjectItem[] = [
       'Kyverno policies enforcing CIS Benchmark & PSS Restricted across all namespaces',
       'Non-root UID enforcement and full Linux capabilities drop on every pod',
       'Default-deny ingress/egress NetworkPolicies with explicit allow rules per service',
-      'Istio REGISTRY_ONLY egress gateway — blocks all undeclared external traffic',
+      'Istio REGISTRY_ONLY routing, with egress gateways and network policies enforcing outbound access',
     ],
   },
   {

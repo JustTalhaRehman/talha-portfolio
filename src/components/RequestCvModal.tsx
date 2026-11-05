@@ -1,76 +1,47 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { X, Mail, ExternalLink, Copy, Check, FileDown } from 'lucide-react';
 import { TALHA_CONFIG } from '@/lib/constants';
 
 export const RequestCvModal = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const dialogRef = useRef<HTMLDialogElement>(null);
   const [mode, setMode] = useState<'cv' | 'contact'>('cv');
-  const [copied, setCopied] = useState(false);
+  const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'failed'>('idle');
 
   useEffect(() => {
-    const handleOpenCv = () => {
-      setMode('cv');
-      setIsOpen(true);
-    };
+    const dialog = dialogRef.current;
+    if (!dialog || typeof dialog.showModal !== 'function') return;
+    let opener: HTMLAnchorElement | null = null;
 
-    const handleOpenEmail = (e?: Event) => {
-      const customEvent = e as CustomEvent<{ mode?: 'cv' | 'contact' }>;
-      setMode(customEvent?.detail?.mode === 'cv' ? 'cv' : 'contact');
-      setIsOpen(true);
-    };
+    function openDialog(event: MouseEvent) {
+      if (event.defaultPrevented || event.button !== 0 ||
+          event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const link = event.target instanceof Element
+        ? event.target.closest<HTMLAnchorElement>('a[data-email-dialog]')
+        : null;
+      if (!link || !dialog || dialog.open) return;
+      event.preventDefault();
+      opener = link;
+      setMode(link.dataset.emailDialog === 'cv' ? 'cv' : 'contact');
+      setCopyStatus('idle');
+      dialog.showModal();
+    }
 
-    const handleGlobalClick = (e: MouseEvent) => {
-      const target = (e.target as HTMLElement)?.closest('a');
-      if (!target) return;
-      const href = target.getAttribute('href');
-      if (href && href.startsWith('mailto:')) {
-        e.preventDefault();
-        const text = (target.textContent || '').toLowerCase();
-        const hrefLower = href.toLowerCase();
-        if (
-          hrefLower.includes('cv') ||
-          hrefLower.includes('resume') ||
-          text.includes('cv') ||
-          text.includes('resume')
-        ) {
-          setMode('cv');
-        } else {
-          setMode('contact');
-        }
-        setIsOpen(true);
-      }
-    };
+    function restoreFocus() {
+      opener?.focus();
+      opener = null;
+    }
 
-    window.addEventListener('open-request-cv', handleOpenCv);
-    window.addEventListener('open-email-modal', handleOpenEmail);
-    document.addEventListener('click', handleGlobalClick);
-
+    document.addEventListener('click', openDialog);
+    dialog.addEventListener('close', restoreFocus);
     return () => {
-      window.removeEventListener('open-request-cv', handleOpenCv);
-      window.removeEventListener('open-email-modal', handleOpenEmail);
-      document.removeEventListener('click', handleGlobalClick);
+      document.removeEventListener('click', openDialog);
+      dialog.removeEventListener('close', restoreFocus);
     };
   }, []);
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setIsOpen(false);
-    };
-    if (isOpen) {
-      window.addEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
-
-  if (!isOpen) return null;
+  const close = () => dialogRef.current?.close();
 
   const isCv = mode === 'cv';
 
@@ -82,8 +53,8 @@ export const RequestCvModal = () => {
 
   const subject = encodeURIComponent(
     isCv
-      ? 'Request for CV — Talha Rehman'
-      : 'Platform & DevOps Engineering Inquiry — Talha Rehman'
+      ? 'Request for CV: Talha Rehman'
+      : 'Platform & DevOps Engineering Inquiry: Talha Rehman'
   );
   const body = encodeURIComponent(
     isCv
@@ -94,96 +65,106 @@ export const RequestCvModal = () => {
   const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${TALHA_CONFIG.email}&su=${subject}&body=${body}`;
   const defaultMailtoUrl = `mailto:${TALHA_CONFIG.email}?subject=${subject}&body=${body}`;
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(TALHA_CONFIG.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(TALHA_CONFIG.email);
+      setCopyStatus('copied');
+    } catch {
+      setCopyStatus('failed');
+    }
   };
 
   return (
-    <div className="modal-backdrop" onClick={() => setIsOpen(false)}>
-      <div
-        className="modal-card"
-        onClick={(e) => e.stopPropagation()}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modal-title"
-      >
-        <div className="modal-header">
-          <div className="modal-title-group">
-            <div className="modal-icon-badge">
-              {isCv ? <FileDown size={18} /> : <Mail size={18} />}
-            </div>
-            <div>
-              <h3 id="modal-title" className="modal-title">{title}</h3>
-              <p className="modal-subtitle">{subtitle}</p>
-            </div>
+    <dialog
+      ref={dialogRef}
+      className="modal-card"
+      aria-labelledby="modal-title"
+      onClick={(event) => {
+        if (event.target !== event.currentTarget) return;
+        const bounds = event.currentTarget.getBoundingClientRect();
+        if (event.clientX < bounds.left || event.clientX > bounds.right ||
+            event.clientY < bounds.top || event.clientY > bounds.bottom) close();
+      }}
+    >
+      <div className="modal-header">
+        <div className="modal-title-group">
+          <div className="modal-icon-badge">
+            {isCv ? <FileDown size={18} /> : <Mail size={18} />}
           </div>
-          <button
-            className="modal-close-btn"
-            onClick={() => setIsOpen(false)}
-            aria-label="Close dialog"
-            type="button"
-          >
-            <X size={18} />
-          </button>
+          <div>
+            <h3 id="modal-title" className="modal-title">{title}</h3>
+            <p className="modal-subtitle">{subtitle}</p>
+          </div>
         </div>
-
-        <p className="modal-desc">{desc}</p>
-
-        <div className="modal-actions-list">
-          {/* Gmail Web Option */}
-          <a
-            href={gmailWebUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="modal-action-primary"
-            onClick={() => setIsOpen(false)}
-          >
-            <div className="action-icon-wrap">
-              <ExternalLink size={16} />
-            </div>
-            <div className="action-text">
-              <span className="action-label">Open in Gmail (Web)</span>
-              <span className="action-hint">Prefilled composer in your browser</span>
-            </div>
-          </a>
-
-          {/* Default Mail App */}
-          <a
-            href={defaultMailtoUrl}
-            className="modal-action-secondary"
-            onClick={() => setIsOpen(false)}
-          >
-            <div className="action-icon-wrap">
-              <Mail size={16} />
-            </div>
-            <div className="action-text">
-              <span className="action-label">Default Mail Client</span>
-              <span className="action-hint">Apple Mail, Outlook, Thunderbird</span>
-            </div>
-          </a>
-
-          {/* Copy Email */}
-          <button
-            type="button"
-            className="modal-action-secondary copy-btn"
-            onClick={handleCopy}
-          >
-            <div className="action-icon-wrap">
-              {copied ? <Check size={16} className="text-emerald" /> : <Copy size={16} />}
-            </div>
-            <div className="action-text">
-              <span className="action-label">
-                {copied ? 'Copied to Clipboard!' : `Copy ${TALHA_CONFIG.email}`}
-              </span>
-              <span className="action-hint">
-                {copied ? 'Ready to paste in your email' : 'Copy address to paste manually'}
-              </span>
-            </div>
-          </button>
-        </div>
+        <button
+          className="modal-close-btn"
+          onClick={close}
+          aria-label="Close dialog"
+          type="button"
+        >
+          <X size={18} />
+        </button>
       </div>
-    </div>
+
+      <p className="modal-desc">{desc}</p>
+
+      <div className="modal-actions-list">
+        {/* Gmail Web Option */}
+        <a
+          href={gmailWebUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="modal-action-primary"
+          onClick={close}
+        >
+          <div className="action-icon-wrap">
+            <ExternalLink size={16} />
+          </div>
+          <div className="action-text">
+            <span className="action-label">Open in Gmail (Web)</span>
+            <span className="action-hint">Prefilled composer in your browser</span>
+          </div>
+        </a>
+
+        {/* Default Mail App */}
+        <a
+          href={defaultMailtoUrl}
+          className="modal-action-secondary"
+          onClick={close}
+        >
+          <div className="action-icon-wrap">
+            <Mail size={16} />
+          </div>
+          <div className="action-text">
+            <span className="action-label">Default Mail Client</span>
+            <span className="action-hint">Apple Mail, Outlook, Thunderbird</span>
+          </div>
+        </a>
+
+        {/* Copy Email */}
+        <button
+          type="button"
+          className="modal-action-secondary copy-btn"
+          onClick={handleCopy}
+        >
+          <div className="action-icon-wrap">
+            {copyStatus === 'copied' ? <Check size={16} className="text-emerald" /> : <Copy size={16} />}
+          </div>
+          <div className="action-text">
+            <span className="action-label">
+              {copyStatus === 'copied' ? 'Copied to Clipboard!' : `Copy ${TALHA_CONFIG.email}`}
+            </span>
+            <span className="action-hint">
+              {copyStatus === 'failed' ? 'Copy unavailable. Select the address above.' :
+                copyStatus === 'copied' ? 'Ready to paste in your email' : 'Copy address to paste manually'}
+            </span>
+          </div>
+        </button>
+      </div>
+      <span role="status" className="sr-only">
+        {copyStatus === 'copied' && 'Email address copied.'}
+        {copyStatus === 'failed' && `Could not copy. Select ${TALHA_CONFIG.email} manually.`}
+      </span>
+    </dialog>
   );
 };

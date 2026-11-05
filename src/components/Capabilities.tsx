@@ -3,8 +3,8 @@ import { CAPABILITIES } from '@/lib/constants';
 
 export const Capabilities = () => {
   return (
-    <section id="capabilities" className="content-section diffuse-reveal">
-      <div className="section-label">Capabilities</div>
+    <section tabIndex={-1} id="capabilities" className="content-section diffuse-reveal">
+      <h2 className="section-label">Capabilities</h2>
 
       <div style={{ marginBottom: '40px' }}>
         <p style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: '600', letterSpacing: '-0.025em', color: 'var(--text-primary)', lineHeight: 1.45 }}>

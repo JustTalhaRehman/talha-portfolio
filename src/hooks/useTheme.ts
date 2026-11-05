@@ -10,26 +10,19 @@ export const useTheme = () => {
 
   useEffect(() => {
     setMounted(true);
-    const saved = localStorage.getItem('talha-theme') as Theme | null;
-    if (saved === 'light' || saved === 'dark') {
-      setTheme(saved);
-      document.documentElement.setAttribute('data-theme', saved);
-    } else {
-      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-      const initial = prefersLight ? 'light' : 'dark';
-      setTheme(initial);
-      document.documentElement.setAttribute('data-theme', initial);
-    }
+    setTheme(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
   }, []);
 
   const toggleTheme = useCallback(() => {
-    setTheme((prev) => {
-      const next = prev === 'dark' ? 'light' : 'dark';
+    const next = theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    document.documentElement.dataset.theme = next;
+    try {
       localStorage.setItem('talha-theme', next);
-      document.documentElement.setAttribute('data-theme', next);
-      return next;
-    });
-  }, []);
+    } catch {
+      // The theme still applies when browser storage is unavailable.
+    }
+  }, [theme]);
 
   return { theme, toggleTheme, mounted };
 };

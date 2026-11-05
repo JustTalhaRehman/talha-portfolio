@@ -7,6 +7,24 @@ import { Sun, Moon, FileDown } from 'lucide-react';
 import { useTheme } from '@/hooks/useTheme';
 import { TALHA_CONFIG } from '@/lib/constants';
 
+const sections = [
+  ['work', 'Projects'],
+  ['capabilities', 'Capabilities'],
+  ['skills', 'Stack'],
+  ['about', 'About'],
+  ['contact', 'Contact'],
+] as const;
+
+function SectionLinks({ onClick }: { onClick?: React.MouseEventHandler<HTMLAnchorElement> }) {
+  return (
+    <ul className="nav-links">
+      {sections.map(([id, label]) => (
+        <li key={id}><a href={`#${id}`} className="nav-link" onClick={onClick}>{label}</a></li>
+      ))}
+    </ul>
+  );
+}
+
 export const Navbar = () => {
   const { theme, toggleTheme, mounted } = useTheme();
 
@@ -24,21 +42,26 @@ export const Navbar = () => {
           />
         </Link>
 
-        <nav aria-label="Main Navigation">
-          <ul className="nav-links">
-            <li><a href="#work" className="nav-link">Projects</a></li>
-            <li><a href="#capabilities" className="nav-link">Capabilities</a></li>
-            <li><a href="#skills" className="nav-link">Stack</a></li>
-            <li><a href="#about" className="nav-link">About</a></li>
-            <li><a href="#contact" className="nav-link">Contact</a></li>
-          </ul>
+        <nav className="desktop-nav" aria-label="Main navigation">
+          <SectionLinks />
         </nav>
+        <details className="mobile-nav">
+          <summary>Menu</summary>
+          <nav aria-label="Main navigation">
+            <SectionLinks onClick={(event) => {
+              event.currentTarget.closest('details')?.removeAttribute('open');
+              if (event.currentTarget.hash) {
+                document.getElementById(event.currentTarget.hash.slice(1))?.focus();
+              }
+            }} />
+          </nav>
+        </details>
 
         <div className="nav-actions">
           <a
             href={TALHA_CONFIG.resumeUrl}
             className="resume-pill-btn"
-            onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('open-request-cv')); }}
+            data-email-dialog="cv"
             title="Request CV"
           >
             <FileDown size={14} className="resume-icon" />

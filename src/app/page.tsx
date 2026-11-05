@@ -14,9 +14,10 @@ import { ScrollObserver } from '@/components/ScrollObserver';
 export default function HomePage() {
   return (
     <>
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <ScrollObserver />
       <Navbar />
-      <main className="page-wrap">
+      <main id="main-content" className="page-wrap" tabIndex={-1}>
         <Hero />
         <Trust />
         <Projects />

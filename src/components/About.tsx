@@ -4,20 +4,19 @@ import { TALHA_CONFIG } from '@/lib/constants';
 
 export const About = () => {
   return (
-    <section id="about" className="content-section diffuse-reveal">
-      <div className="section-label">About</div>
+    <section tabIndex={-1} id="about" className="content-section diffuse-reveal">
+      <h2 className="section-label">About</h2>
 
       <div className="about-layout">
         <div className="about-portrait-card diffuse-reveal">
           <div className="about-portrait-glow" aria-hidden="true" />
           <div className="about-portrait-inner">
             <Image
-              src="/talha.png"
+              src="/talha.webp"
               alt="Talha Rehman - DevOps & Platform Engineer"
               width={543}
               height={724}
               className="about-portrait-photo"
-              priority={false}
             />
             <div className="about-portrait-glass-footer">
               <div className="portrait-footer-info">
@@ -34,7 +33,7 @@ export const About = () => {
 
         <div className="about-content-panel">
           <p className="about-paragraph">
-            I design and operate secure, compliance-ready cloud platforms for enterprise and regulated-industry teams. My work spans the full platform stack: resilient multi-account AWS architecture, Kubernetes hardening aligned to CIS Benchmarks and HIPAA / SOC 2 / PCI DSS controls, zero-touch GitOps delivery, and telemetry-driven reliability — built to pass audits and stay up in production.
+            I design and operate secure, compliance-ready cloud platforms for enterprise and regulated-industry teams. My work spans the full platform stack: resilient multi-account AWS architecture, Kubernetes hardening aligned to CIS Benchmarks and HIPAA / SOC 2 / PCI DSS controls, zero-touch GitOps delivery, and telemetry-driven reliability to support audits and production operations.
           </p>
 
           <div className="about-pillars-grid">

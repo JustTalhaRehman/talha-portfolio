@@ -70,20 +70,19 @@ const AnimatedMetric = ({
 
   // Determine displayed text
   let displayValue = value;
-  if (mounted) {
+  if (hasStartedAnimation) {
     if (hasCompleted) {
       displayValue = value; // Permanently lock into original value once completed
-    } else if (hasStartedAnimation) {
-      displayValue = `${decimals > 0 ? currentVal.toFixed(decimals) : Math.round(currentVal)}${suffix}`;
     } else {
-      displayValue = `0${decimals > 0 ? '.' + '0'.repeat(decimals) : ''}${suffix}`;
+      displayValue = `${decimals > 0 ? currentVal.toFixed(decimals) : Math.round(currentVal)}${suffix}`;
     }
   }
 
   return (
     <div className="trust-card">
       <div className="trust-value">
-        <span className="trust-number">{displayValue}</span>
+        <span className="trust-number" aria-hidden="true">{displayValue}</span>
+        <span className="sr-only">{value}</span>
       </div>
       <span className="trust-label">{label}</span>
     </div>
@@ -100,7 +99,8 @@ export const Trust = () => {
   }, []);
 
   useEffect(() => {
-    if (!mounted) return;
+    if (!mounted || !('IntersectionObserver' in window) ||
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const el = sectionRef.current;
     if (!el) return;
 
@@ -125,7 +125,7 @@ export const Trust = () => {
   }, [mounted]);
 
   return (
-    <section ref={sectionRef} id="trust" className="trust-section diffuse-reveal">
+    <section ref={sectionRef} id="trust" aria-label="Engineering outcomes" className="trust-section diffuse-reveal">
       <div className="trust-grid">
         {METRICS.map((metric, idx) => (
           <AnimatedMetric

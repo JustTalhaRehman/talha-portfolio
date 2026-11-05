@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 import { TALHA_CONFIG } from '@/lib/constants';
@@ -40,10 +38,10 @@ export const Hero = () => {
         {TALHA_CONFIG.brandName}
       </h1>
 
-      <h2 className="hero-lead">
+      <p className="hero-lead">
         <span className="hero-lead-line">Multi-Cloud Infrastructure • Kubernetes</span>
         <span className="hero-lead-line">Production Reliability</span>
-      </h2>
+      </p>
 
       <p className="hero-sub">
         {TALHA_CONFIG.shortBio}
@@ -107,10 +105,7 @@ export const Hero = () => {
           className="social-circle"
           aria-label="Email Contact"
           title="Email"
-          onClick={(e) => {
-            e.preventDefault();
-            window.dispatchEvent(new CustomEvent('open-email-modal', { detail: { mode: 'contact' } }));
-          }}
+          data-email-dialog="contact"
         >
           <Mail size={16} />
         </a>
@@ -119,10 +114,7 @@ export const Hero = () => {
           className="social-circle"
           aria-label="Request CV"
           title="Request CV"
-          onClick={(e) => {
-            e.preventDefault();
-            window.dispatchEvent(new CustomEvent('open-request-cv'));
-          }}
+          data-email-dialog="cv"
         >
           <FileText size={16} />
         </a>
