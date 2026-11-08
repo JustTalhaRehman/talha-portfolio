@@ -17,3 +17,6 @@ dist/
 # Environment
 .env*.local
 .env
+
+# Local Cloudflare state
+.wrangler/

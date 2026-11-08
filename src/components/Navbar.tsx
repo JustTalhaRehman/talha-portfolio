@@ -19,7 +19,7 @@ function SectionLinks({ onClick }: { onClick?: React.MouseEventHandler<HTMLAncho
   return (
     <ul className="nav-links">
       {sections.map(([id, label]) => (
-        <li key={id}><a href={`#${id}`} className="nav-link" onClick={onClick}>{label}</a></li>
+        <li key={id}><a href={`/#${id}`} className="nav-link" onClick={onClick}>{label}</a></li>
       ))}
     </ul>
   );
@@ -31,7 +31,7 @@ export const Navbar = () => {
   return (
     <header className="site-nav">
       <div className="nav-inner">
-        <Link href="#hero" className="nav-brand" aria-label="Talha Rehman">
+        <Link href="/#hero" className="nav-brand" aria-label="Talha Rehman">
           <Image
             src="/talha-portfolio-logo.png"
             alt="Talha"

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useId, useState } from 'react';
+import Link from 'next/link';
 import { ArrowUpRight, Github, ChevronDown, CheckCircle2, Layers, BookOpen } from 'lucide-react';
 import { PROJECTS, ProjectItem } from '@/lib/constants';
 
@@ -23,6 +24,8 @@ const ProjectCard = ({ project }: { project: ProjectItem }) => {
       </h3>
 
       <p className="project-desc">{project.desc}</p>
+
+      {project.caseStudy && <Link href={project.caseStudy} className="project-source-btn">Read the engineering note <ArrowUpRight size={12} /></Link>}
 
       <div className="project-meta-row">
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>

@@ -11,6 +11,7 @@ export interface ProjectItem {
   link: string;
   github?: string;
   mediumUrl?: string;
+  caseStudy?: string;
   tags: string[];
   highlights?: string[];
 }
@@ -75,39 +76,40 @@ export const CAPABILITIES: CapabilityItem[] = [
 
 export const PROJECTS: ProjectItem[] = [
   {
-    title: 'Production EKS Platform Engineering',
+    title: 'EKS Platform Engineering',
     desc: 'A reproducible EKS platform with private networking, workload identity and GitOps delivery, provisioned with Terraform.',
-    subdesc: 'Two-tier VPC with private node groups, multi-AZ NAT gateways, External DNS, External Secrets Operator, Cluster Autoscaler, KEDA event-driven scaling, and ArgoCD continuous reconciliation — deployable and reproducible in under 20 minutes.',
+    subdesc: 'Separate Terraform roots for cluster infrastructure and Helm add-ons, with remote-state outputs connecting the layers. Includes private networking, managed node groups and an Argo CD bootstrap configuration.',
     link: 'https://github.com/JustTalhaRehman/eks-platform-engineering',
     github: 'https://github.com/JustTalhaRehman/eks-platform-engineering',
+    caseStudy: '/writing/eks-platform-terraform',
     tags: ['Amazon EKS', 'Terraform', 'ArgoCD'],
     highlights: [
       'Multi-AZ private VPC with isolated node groups and NAT gateway egress',
-      'IRSA (IAM Roles for Service Accounts) — zero static credential exposure',
+      'IRSA binds add-on access to Kubernetes service accounts',
       'KEDA & Cluster Autoscaler for cost-efficient, demand-driven scaling',
-      'ArgoCD GitOps with drift detection and automated self-healing reconciliation',
+      'Argo CD Helm bootstrap; application reconciliation requires additional configuration',
     ],
   },
   {
     title: 'Zero-Trust Kubernetes Secrets Management',
     desc: 'Deliver AWS Secrets Manager credentials to Kubernetes workloads without storing plaintext secrets in Git or container images.',
-    subdesc: 'External Secrets Operator with namespace-scoped IRSA roles for credential-less authentication, automated rotation propagation, and live workload re-injection — meeting compliance requirements for PHI and PII data environments.',
+    subdesc: 'External Secrets Operator examples map AWS Secrets Manager values into Kubernetes Secrets using IRSA authentication. Workload reload behavior and namespace boundaries require explicit validation.',
     link: 'https://github.com/JustTalhaRehman/k8s-secrets-management',
     github: 'https://github.com/JustTalhaRehman/k8s-secrets-management',
+    caseStudy: '/writing/kubernetes-secrets-aws',
     tags: ['External Secrets Operator', 'AWS Secrets Manager', 'IRSA'],
     highlights: [
       'External Secrets Operator pulling versioned secrets from AWS Secrets Manager',
       'Eliminates plaintext credentials from Git, manifests, and container images',
-      'Automated rotation cycle with zero-downtime live workload re-injection',
-      'Namespace-scoped IRSA roles preventing cross-tenant privilege escalation',
+      'Scheduled secret synchronization; application reloads must be handled separately',
+      'IAM and store scope determine access boundaries; review them for each namespace',
     ],
   },
   {
     title: 'Enterprise Multi-Account AWS Landing Zone',
     desc: 'A landing zone spanning 37+ AWS accounts, with isolated networks, shared connectivity and centrally managed access controls.',
     subdesc: 'Hub-and-spoke Transit Gateway topology, VPC PrivateLink for private service exposure, KMS Separation of Duties, IAM least-privilege enforcement, and CIS AWS Foundations Benchmark hardening — provisioned via modular Terraform and Terragrunt.',
-    link: 'https://github.com/JustTalhaRehman',
-    github: 'https://github.com/JustTalhaRehman',
+    link: 'https://devistio.com/engineering#case-3',
     tags: ['Transit Gateway', 'PrivateLink', 'Terragrunt'],
     highlights: [
       'Transit Gateway hub-and-spoke mesh connecting 37+ isolated AWS accounts',
@@ -120,8 +122,7 @@ export const PROJECTS: ProjectItem[] = [
     title: 'CIS-Hardened Kubernetes Security Platform',
     desc: 'Kubernetes admission policies and network boundaries that enforce safer workload defaults across shared EKS clusters.',
     subdesc: 'Kyverno admission controller in audit and enforce modes, mandatory non-root execution, dropped Linux capabilities, default-deny NetworkPolicies, and Istio REGISTRY_ONLY egress — defense-in-depth posture aligned to SOC 2, HIPAA, and PCI DSS.',
-    link: 'https://github.com/JustTalhaRehman',
-    github: 'https://github.com/JustTalhaRehman',
+    link: 'https://devistio.com/engineering#case-1',
     tags: ['Kyverno', 'NetworkPolicies', 'Istio'],
     highlights: [
       'Kyverno policies enforcing CIS Benchmark & PSS Restricted across all namespaces',
