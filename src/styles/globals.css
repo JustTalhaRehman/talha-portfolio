@@ -1636,6 +1636,10 @@ body:has(.modal-card[open]) { overflow: hidden; }
   object-position: center;
 }
 
+[data-theme="dark"] .hero-background-video {
+  filter: brightness(1.1);
+}
+
 .hero-motion-toggle {
   position: absolute;
   z-index: 2;
