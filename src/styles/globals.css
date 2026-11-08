@@ -1634,10 +1634,11 @@ body:has(.modal-card[open]) { overflow: hidden; }
 .hero-background-video {
   object-fit: cover;
   object-position: center;
+  transform: scale(1.2);
 }
 
 [data-theme="dark"] .hero-background-video {
-  filter: brightness(1.1);
+  filter: brightness(1.35);
 }
 
 .hero-motion-toggle {
