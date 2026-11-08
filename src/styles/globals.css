@@ -1639,7 +1639,7 @@ body:has(.modal-card[open]) { overflow: hidden; }
 }
 
 [data-theme="dark"] .hero-background-video {
-  filter: brightness(0.648);
+  filter: brightness(0.55);
   mix-blend-mode: screen;
 }
 
