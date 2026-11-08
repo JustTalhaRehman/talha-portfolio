@@ -273,6 +273,7 @@ a {
 
 /* Decorative hero video */
 .hero-backdrop {
+  background: var(--bg);
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -1634,11 +1635,12 @@ body:has(.modal-card[open]) { overflow: hidden; }
 .hero-background-video {
   object-fit: cover;
   object-position: center;
-  transform: scale(1.2);
+  transform: none;
 }
 
 [data-theme="dark"] .hero-background-video {
-  filter: brightness(0.81);
+  filter: brightness(0.648);
+  mix-blend-mode: screen;
 }
 
 .hero-motion-toggle {
@@ -1663,4 +1665,15 @@ body:has(.modal-card[open]) { overflow: hidden; }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-enter, .hero-stagger { opacity: 1; transform: none; }
+}
+
+@media (max-width: 768px) {
+  .hero-background-video {
+    object-fit: contain;
+    transform: scale(1.6);
+  }
+}
+
+[data-theme="light"] .hero-background-video {
+  mix-blend-mode: multiply;
 }
