@@ -1,6 +1,9 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useRef } from 'react';
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 import { TALHA_CONFIG } from '@/lib/constants';
+import { HeroVideo } from './HeroVideo';
 
 const WhatsAppIcon = ({ size = 16 }: { size?: number }) => (
   <svg
@@ -27,97 +30,116 @@ const MediumIcon = ({ size = 16 }: { size?: number }) => (
 );
 
 export const Hero = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  /* Sirkup-style staggered fade-in on mount */
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    // Trigger entrance after a tiny paint delay
+    const id = requestAnimationFrame(() => {
+      el.classList.add('hero-visible');
+    });
+
+    return () => cancelAnimationFrame(id);
+  }, []);
+
   return (
-    <section id="hero" className="hero-section">
+    <section id="hero" className="hero-section hero-enter" ref={sectionRef}>
+      <HeroVideo />
 
-      <p className="hero-tag">
-        {TALHA_CONFIG.role}
-      </p>
+      {/* Content layer (above the mesh) */}
+      <div className="hero-content">
+        <p className="hero-tag hero-stagger" style={{ '--delay': '0.1s' } as React.CSSProperties}>
+          {TALHA_CONFIG.role}
+        </p>
 
-      <h1 className="hero-title">
-        {TALHA_CONFIG.brandName}
-      </h1>
+        <h1 className="hero-title hero-stagger" style={{ '--delay': '0.2s' } as React.CSSProperties}>
+          {TALHA_CONFIG.brandName}
+        </h1>
 
-      <p className="hero-lead">
-        <span className="hero-lead-line">Multi-Cloud Infrastructure • Kubernetes</span>
-        <span className="hero-lead-line">Production Reliability</span>
-      </p>
+        <p className="hero-lead hero-stagger" style={{ '--delay': '0.35s' } as React.CSSProperties}>
+          <span className="hero-lead-line">Multi-Cloud Infrastructure • Kubernetes</span>
+          <span className="hero-lead-line">Production Reliability</span>
+        </p>
 
-      <p className="hero-sub">
-        {TALHA_CONFIG.shortBio}
-      </p>
+        <p className="hero-sub hero-stagger" style={{ '--delay': '0.45s' } as React.CSSProperties}>
+          {TALHA_CONFIG.shortBio}
+        </p>
 
-      <div className="hero-actions">
-        <a href="#contact" className="btn-pill-primary">
-          Get in touch
-        </a>
-        <a href="#work" className="btn-pill-outline">
-          Explore projects
-        </a>
-        <a href="#capabilities" className="btn-pill-outline">
-          Capabilities
-        </a>
-      </div>
+        <div className="hero-actions hero-stagger" style={{ '--delay': '0.55s' } as React.CSSProperties}>
+          <a href="#contact" className="btn-pill-primary">
+            Get in touch
+          </a>
+          <a href="#work" className="btn-pill-outline">
+            Explore projects
+          </a>
+          <a href="#capabilities" className="btn-pill-outline">
+            Capabilities
+          </a>
+        </div>
 
-      <div className="hero-socials">
-        <a
-          href={TALHA_CONFIG.githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="social-circle"
-          aria-label="GitHub Profile"
-          title="GitHub"
-        >
-          <Github size={16} />
-        </a>
-        <a
-          href={TALHA_CONFIG.linkedinUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="social-circle"
-          aria-label="LinkedIn Profile"
-          title="LinkedIn"
-        >
-          <Linkedin size={16} />
-        </a>
-        <a
-          href={TALHA_CONFIG.mediumUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="social-circle"
-          aria-label="Medium Technical Articles"
-          title="Medium Articles"
-        >
-          <MediumIcon size={15} />
-        </a>
-        <a
-          href={TALHA_CONFIG.whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="social-circle"
-          aria-label="WhatsApp Contact"
-          title="WhatsApp"
-        >
-          <WhatsAppIcon size={16} />
-        </a>
-        <a
-          href={`mailto:${TALHA_CONFIG.email}`}
-          className="social-circle"
-          aria-label="Email Contact"
-          title="Email"
-          data-email-dialog="contact"
-        >
-          <Mail size={16} />
-        </a>
-        <a
-          href={TALHA_CONFIG.resumeUrl}
-          className="social-circle"
-          aria-label="Request CV"
-          title="Request CV"
-          data-email-dialog="cv"
-        >
-          <FileText size={16} />
-        </a>
+        <div className="hero-socials hero-stagger" style={{ '--delay': '0.65s' } as React.CSSProperties}>
+          <a
+            href={TALHA_CONFIG.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-circle"
+            aria-label="GitHub Profile"
+            title="GitHub"
+          >
+            <Github size={16} />
+          </a>
+          <a
+            href={TALHA_CONFIG.linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-circle"
+            aria-label="LinkedIn Profile"
+            title="LinkedIn"
+          >
+            <Linkedin size={16} />
+          </a>
+          <a
+            href={TALHA_CONFIG.mediumUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-circle"
+            aria-label="Medium Technical Articles"
+            title="Medium Articles"
+          >
+            <MediumIcon size={15} />
+          </a>
+          <a
+            href={TALHA_CONFIG.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-circle"
+            aria-label="WhatsApp Contact"
+            title="WhatsApp"
+          >
+            <WhatsAppIcon size={16} />
+          </a>
+          <a
+            href={`mailto:${TALHA_CONFIG.email}`}
+            className="social-circle"
+            aria-label="Email Contact"
+            title="Email"
+            data-email-dialog="contact"
+          >
+            <Mail size={16} />
+          </a>
+          <a
+            href={TALHA_CONFIG.resumeUrl}
+            className="social-circle"
+            aria-label="Request CV"
+            title="Request CV"
+            data-email-dialog="cv"
+          >
+            <FileText size={16} />
+          </a>
+        </div>
       </div>
     </section>
   );
