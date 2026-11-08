@@ -60,8 +60,8 @@ export const Hero = () => {
         </h1>
 
         <p className="hero-lead hero-stagger" style={{ '--delay': '0.35s' } as React.CSSProperties}>
-          <span className="hero-lead-line">Multi-Cloud Infrastructure • Kubernetes</span>
-          <span className="hero-lead-line">Production Reliability</span>
+          <span className="hero-lead-line">AWS Infrastructure • Kubernetes</span>
+          <span className="hero-lead-line">Platform Engineering • SRE</span>
         </p>
 
         <p className="hero-sub hero-stagger" style={{ '--delay': '0.45s' } as React.CSSProperties}>

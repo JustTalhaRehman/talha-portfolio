@@ -33,8 +33,10 @@ export const About = () => {
 
         <div className="about-content-panel">
           <p className="about-paragraph">
-            I design and operate secure, compliance-ready cloud platforms for enterprise and regulated-industry teams. My work spans the full platform stack: resilient multi-account AWS architecture, Kubernetes hardening aligned to CIS Benchmarks and HIPAA / SOC 2 / PCI DSS controls, zero-touch GitOps delivery, and telemetry-driven reliability to support audits and production operations.
+            I work with the engineers responsible for shipping and operating a product. That means understanding the existing system, making changes your team can review and explaining the decisions behind them. My work covers AWS architecture, Kubernetes security, GitOps delivery and production observability, with controls aligned to your regulatory requirements.
           </p>
+
+          <p className="about-paragraph">I also founded <a href={TALHA_CONFIG.devistioUrl}>Devistio</a>, where I bring the same approach to cloud and platform consulting engagements.</p>
 
           <div className="about-pillars-grid">
             <div className="about-col diffuse-reveal">

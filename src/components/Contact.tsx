@@ -7,11 +7,11 @@ export const Contact = () => {
       <div className="section-label">Contact</div>
 
       <h2 className="contact-headline">
-        Have infrastructure worth automating or scaling?
+        What is getting in your team’s way?
       </h2>
 
       <p className="contact-sub">
-        Send architectural requirements, platform challenges, or current codebases. I collaborate with engineering teams worldwide and respond with practical next steps.
+        Tell me about the release process, AWS environment or reliability problem you want to improve. Share what your team needs and what you have already tried. I am open to remote roles and project work across the United States, Canada, Europe, the Gulf, Australia, New Zealand, Singapore and worldwide.
       </p>
 
       <a

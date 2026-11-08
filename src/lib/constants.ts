@@ -29,8 +29,8 @@ export const TALHA_CONFIG = {
   name: 'Talha Rehman',
   brandName: 'Talha',
   role: 'DevOps & Platform Engineer',
-  tagline: 'Multi-Cloud Infrastructure · Kubernetes · HIPAA & SOC 2 Compliant Platforms',
-  shortBio: 'I build AWS infrastructure, Kubernetes platforms and GitOps pipelines for production teams. My work spans multi-account networking, Terraform automation, and platform security. Open to remote and relocation opportunities.',
+  tagline: 'AWS Infrastructure · Kubernetes · DevOps · Production Reliability',
+  shortBio: 'Risky releases, difficult Kubernetes operations, or recurring incidents? I help teams build reliable AWS infrastructure, automate delivery and understand what is happening in production. Open to remote and relocation opportunities.',
   location: 'Remote · Available Worldwide',
   availability: 'Open to Remote & Relocation — UAE · Germany · France · Netherlands · Poland · New Zealand · Worldwide',
   email: 'talha@devistio.com',
@@ -63,7 +63,7 @@ export const CAPABILITIES: CapabilityItem[] = [
   },
   {
     title: 'Istio Service Mesh & Egress Security',
-    desc: 'Zero-trust service mesh implementation using Istio — migrating permissive ALLOW_ANY egress to REGISTRY_ONLY allow-lists with ServiceEntries, Egress Gateways, and mTLS enforcement between workloads.',
+    desc: 'I help teams make workload communication explicit using Istio, mTLS, scoped ServiceEntries and egress gateways. Network policies enforce the outbound boundaries alongside service-mesh routing.',
     tags: ['Istio', 'mTLS', 'Egress Gateway', 'ServiceEntries', 'VPC Endpoints', 'Zero Trust'],
   },
   {
@@ -72,9 +72,9 @@ export const CAPABILITIES: CapabilityItem[] = [
     tags: ['GitHub Actions', 'ArgoCD', 'Jenkins', 'CircleCI', 'Spacelift', 'GitOps'],
   },
   {
-    title: 'Full-Stack Observability (Grafana LGTM)',
-    desc: 'Unified telemetry platform (Grafana Loki · Mimir · Tempo · Pyroscope) slashing mean time to resolution by ~50% across distributed microservices — correlated logs, metrics, traces, and continuous profiling in a single pane.',
-    tags: ['Grafana', 'Loki', 'Mimir', 'Tempo', 'Pyroscope', 'Datadog', 'Prometheus'],
+    title: 'Site Reliability Engineering & Observability',
+    desc: 'When an incident crosses service boundaries, scattered dashboards slow the investigation. I connect logs, metrics, traces and profiling with Grafana LGTM so engineers can follow a request and find useful evidence.',
+    tags: ['SRE', 'Grafana', 'Loki', 'Mimir', 'Tempo', 'Pyroscope', 'Prometheus'],
   },
   {
     title: 'Infrastructure as Code & Drift Governance',

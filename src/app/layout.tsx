@@ -2,10 +2,11 @@ import type { Metadata, Viewport } from 'next';
 import '@/styles/globals.css';
 import '@/styles/fonts.css';
 import { TALHA_CONFIG } from '@/lib/constants';
+import { remoteServiceCountries } from '@/lib/markets';
 
 const siteUrl = 'https://talha.devistio.com/';
-const title = `${TALHA_CONFIG.name} | DevOps & Platform Engineer`;
-const description = 'Talha Rehman builds AWS infrastructure, Kubernetes platforms and GitOps pipelines. Explore his projects and connect about remote or relocation roles.';
+const title = `${TALHA_CONFIG.name} | DevOps, Cloud & Platform Engineer`;
+const description = 'Talha Rehman helps teams improve AWS infrastructure, Kubernetes delivery and production reliability. DevOps, platform engineering and SRE for remote teams.';
 const image = {
   url: '/talha-portfolio-logo-solid.png',
   width: 826,
@@ -41,7 +42,20 @@ const jsonLd = {
     url: siteUrl,
     image: new URL('/talha.webp', siteUrl).href,
     sameAs: [TALHA_CONFIG.linkedinUrl, TALHA_CONFIG.githubUrl, TALHA_CONFIG.mediumUrl],
-    knowsAbout: ['AWS', 'Kubernetes', 'Terraform', 'GitOps', 'Observability'],
+    email: TALHA_CONFIG.email,
+    telephone: TALHA_CONFIG.phone,
+    worksFor: { '@type': 'Organization', '@id': 'https://devistio.com/#organization', name: 'Devistio', url: TALHA_CONFIG.devistioUrl },
+    knowsAbout: ['DevOps', 'AWS cloud architecture', 'Kubernetes', 'Platform engineering', 'Terraform', 'GitOps', 'CI/CD', 'Site reliability engineering', 'Observability', 'Cloud security'],
+    makesOffer: {
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: 'Remote DevOps, cloud and platform engineering support',
+        url: new URL('#contact', siteUrl).href,
+        provider: { '@id': personId },
+        areaServed: remoteServiceCountries.map((name) => ({ '@type': 'Country', name })),
+      },
+    },
   },
 };
 
