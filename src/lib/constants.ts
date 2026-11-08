@@ -30,9 +30,9 @@ export const TALHA_CONFIG = {
   brandName: 'Talha',
   role: 'DevOps & Platform Engineer',
   tagline: 'AWS Infrastructure · Kubernetes · DevOps · Production Reliability',
-  shortBio: 'Risky releases, difficult Kubernetes operations, or recurring incidents? I help teams build reliable AWS infrastructure, automate delivery and understand what is happening in production. Open to remote and relocation opportunities.',
+  shortBio: 'I help teams ship confidently, run reliable cloud infrastructure and make production easier to understand.',
   location: 'Remote · Available Worldwide',
-  availability: 'Open to Remote & Relocation — UAE · Germany · France · Netherlands · Poland · New Zealand · Worldwide',
+  availability: 'Open to remote roles and relocation worldwide',
   email: 'talha@devistio.com',
   phone: '+92 315 6569204',
   whatsappUrl: 'https://wa.me/923156569204',
@@ -52,50 +52,35 @@ export const METRICS: MetricItem[] = [
 
 export const CAPABILITIES: CapabilityItem[] = [
   {
-    title: 'Multi-Cloud & AWS Enterprise Architecture',
-    desc: 'Designed and operated scalable multi-account AWS landing zones across 37+ accounts using Transit Gateway hub-and-spoke topology, VPC PrivateLink, Amazon EKS, and RDS Aurora — with full network isolation and cross-account IAM governance.',
-    tags: ['AWS EKS', 'Transit Gateway', 'PrivateLink', 'Aurora RDS', 'VPC Architecture', 'Multi-Account IAM'],
+    title: 'Cloud Architecture & Infrastructure as Code',
+    desc: 'Build AWS environments your team can review, reproduce and maintain, with clear network and access boundaries.',
+    tags: ['AWS', 'Terraform', 'Terragrunt'],
   },
   {
-    title: 'Kubernetes Platforms & DevSecOps',
-    desc: 'Production EKS platforms hardened to CIS Kubernetes Benchmark standards — Kyverno admission control, Pod Security Standards (Restricted profile), default-deny NetworkPolicies, and IRSA-based least-privilege workload identity.',
-    tags: ['Amazon EKS', 'Kyverno', 'CIS Benchmark', 'PSS Restricted', 'NetworkPolicies', 'KEDA'],
+    title: 'Kubernetes & Platform Security',
+    desc: 'Run EKS platforms with workload isolation, managed secrets and policies that catch unsafe changes before deployment.',
+    tags: ['Amazon EKS', 'Kyverno', 'Istio'],
   },
   {
-    title: 'Istio Service Mesh & Egress Security',
-    desc: 'I help teams make workload communication explicit using Istio, mTLS, scoped ServiceEntries and egress gateways. Network policies enforce the outbound boundaries alongside service-mesh routing.',
-    tags: ['Istio', 'mTLS', 'Egress Gateway', 'ServiceEntries', 'VPC Endpoints', 'Zero Trust'],
+    title: 'GitOps & Delivery Automation',
+    desc: 'Make releases repeatable with automated checks, reviewed infrastructure changes and clear rollback paths.',
+    tags: ['GitHub Actions', 'ArgoCD', 'Spacelift'],
   },
   {
-    title: 'GitOps & CI/CD Pipeline Engineering',
-    desc: 'End-to-end release automation reducing deployment cycle time from 20 min to under 4 min (80% faster) — GitHub Actions, ArgoCD continuous reconciliation, Spacelift IaC pipelines, and gated production promotion workflows.',
-    tags: ['GitHub Actions', 'ArgoCD', 'Jenkins', 'CircleCI', 'Spacelift', 'GitOps'],
-  },
-  {
-    title: 'Site Reliability Engineering & Observability',
-    desc: 'When an incident crosses service boundaries, scattered dashboards slow the investigation. I connect logs, metrics, traces and profiling with Grafana LGTM so engineers can follow a request and find useful evidence.',
-    tags: ['SRE', 'Grafana', 'Loki', 'Mimir', 'Tempo', 'Pyroscope', 'Prometheus'],
-  },
-  {
-    title: 'Infrastructure as Code & Drift Governance',
-    desc: 'Fully modular, DRY IaC using Terraform, OpenTofu, and Terragrunt — remote state locking, PR-gated plan reviews, automated Checkov security scanning, and drift detection to prevent unauthorized infrastructure changes.',
-    tags: ['Terraform', 'OpenTofu', 'Terragrunt', 'Checkov', 'Ansible', 'Python Automation'],
-  },
-  {
-    title: 'Compliance & Regulatory Readiness',
-    desc: 'Continuous compliance engineering aligned to HIPAA, SOC 2 Type II, PCI DSS, and CIS Benchmarks — policy-as-code enforcement in CI, CloudTrail audit logging, KMS Separation of Duties, IAM access reviews, and audit-ready change history via GitOps.',
-    tags: ['HIPAA', 'SOC 2 Type II', 'PCI DSS', 'CIS Benchmarks', 'CloudTrail Audit', 'Policy-as-Code'],
+    title: 'Site Reliability & Observability',
+    desc: 'Connect logs, metrics and traces so engineers can investigate incidents and understand how services behave.',
+    tags: ['Grafana', 'Prometheus', 'Loki'],
   },
 ];
 
 export const PROJECTS: ProjectItem[] = [
   {
     title: 'Production EKS Platform Engineering',
-    desc: 'Enterprise-grade Terraform infrastructure for Amazon EKS — built for regulated-industry workloads requiring high availability, IRSA-based least-privilege access, and full GitOps delivery.',
+    desc: 'A reproducible EKS platform with private networking, workload identity and GitOps delivery, provisioned with Terraform.',
     subdesc: 'Two-tier VPC with private node groups, multi-AZ NAT gateways, External DNS, External Secrets Operator, Cluster Autoscaler, KEDA event-driven scaling, and ArgoCD continuous reconciliation — deployable and reproducible in under 20 minutes.',
     link: 'https://github.com/JustTalhaRehman/eks-platform-engineering',
     github: 'https://github.com/JustTalhaRehman/eks-platform-engineering',
-    tags: ['Amazon EKS', 'Terraform', 'ArgoCD', 'KEDA', 'IRSA', 'Cluster Autoscaler'],
+    tags: ['Amazon EKS', 'Terraform', 'ArgoCD'],
     highlights: [
       'Multi-AZ private VPC with isolated node groups and NAT gateway egress',
       'IRSA (IAM Roles for Service Accounts) — zero static credential exposure',
@@ -105,11 +90,11 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     title: 'Zero-Trust Kubernetes Secrets Management',
-    desc: 'HIPAA and SOC 2-aligned secrets pipeline — pulling from AWS Secrets Manager into Kubernetes with zero plaintext credentials in Git or container images.',
+    desc: 'Deliver AWS Secrets Manager credentials to Kubernetes workloads without storing plaintext secrets in Git or container images.',
     subdesc: 'External Secrets Operator with namespace-scoped IRSA roles for credential-less authentication, automated rotation propagation, and live workload re-injection — meeting compliance requirements for PHI and PII data environments.',
     link: 'https://github.com/JustTalhaRehman/k8s-secrets-management',
     github: 'https://github.com/JustTalhaRehman/k8s-secrets-management',
-    tags: ['External Secrets Operator', 'AWS Secrets Manager', 'IRSA', 'HIPAA', 'SOC 2', 'Zero Trust'],
+    tags: ['External Secrets Operator', 'AWS Secrets Manager', 'IRSA'],
     highlights: [
       'External Secrets Operator pulling versioned secrets from AWS Secrets Manager',
       'Eliminates plaintext credentials from Git, manifests, and container images',
@@ -119,11 +104,11 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     title: 'Enterprise Multi-Account AWS Landing Zone',
-    desc: 'Production-grade cloud platform spanning 37+ AWS accounts — designed for enterprise and regulated-industry workloads with full network isolation, CIS-aligned security controls, and centralized governance.',
+    desc: 'A landing zone spanning 37+ AWS accounts, with isolated networks, shared connectivity and centrally managed access controls.',
     subdesc: 'Hub-and-spoke Transit Gateway topology, VPC PrivateLink for private service exposure, KMS Separation of Duties, IAM least-privilege enforcement, and CIS AWS Foundations Benchmark hardening — provisioned via modular Terraform and Terragrunt.',
     link: 'https://github.com/JustTalhaRehman',
     github: 'https://github.com/JustTalhaRehman',
-    tags: ['Transit Gateway', 'VPC PrivateLink', 'KMS', 'CIS Hardening', 'Terraform', 'Terragrunt'],
+    tags: ['Transit Gateway', 'PrivateLink', 'Terragrunt'],
     highlights: [
       'Transit Gateway hub-and-spoke mesh connecting 37+ isolated AWS accounts',
       'VPC PrivateLink & Endpoints — microservices never traverse the public internet',
@@ -133,11 +118,11 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     title: 'CIS-Hardened Kubernetes Security Platform',
-    desc: 'Policy-as-code security layer for Amazon EKS — enforcing CIS Kubernetes Benchmark controls, Pod Security Standards (Restricted), and zero-trust network segmentation across multi-tenant production clusters.',
+    desc: 'Kubernetes admission policies and network boundaries that enforce safer workload defaults across shared EKS clusters.',
     subdesc: 'Kyverno admission controller in audit and enforce modes, mandatory non-root execution, dropped Linux capabilities, default-deny NetworkPolicies, and Istio REGISTRY_ONLY egress — defense-in-depth posture aligned to SOC 2, HIPAA, and PCI DSS.',
     link: 'https://github.com/JustTalhaRehman',
     github: 'https://github.com/JustTalhaRehman',
-    tags: ['Kyverno', 'CIS Benchmark', 'PSS Restricted', 'NetworkPolicies', 'Istio', 'SOC 2'],
+    tags: ['Kyverno', 'NetworkPolicies', 'Istio'],
     highlights: [
       'Kyverno policies enforcing CIS Benchmark & PSS Restricted across all namespaces',
       'Non-root UID enforcement and full Linux capabilities drop on every pod',
@@ -147,11 +132,11 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     title: 'Structured Logging on AWS ECS Fargate',
-    desc: 'From noisy logs to actionable insights — a hands-on deep dive into implementing structured JSON logging on AWS ECS Fargate with FireLens, Fluent Bit, and CloudWatch Logs Insights for production observability.',
+    desc: 'A practical guide to structured container logs on ECS Fargate using FireLens, Fluent Bit and CloudWatch Logs Insights.',
     subdesc: 'A practical engineering walkthrough covering structured log schema design, FireLens sidecar configuration, Fluent Bit routing rules, and CloudWatch Logs Insights queries — transforming raw container output into queryable, alertable observability data aligned to production SLOs.',
     link: 'https://medium.com/@talha32rehman/from-noisy-logs-to-actionable-insights-implementing-structured-logging-on-aws-ecs-fargate-179d5bd221e6',
     mediumUrl: 'https://medium.com/@talha32rehman/from-noisy-logs-to-actionable-insights-implementing-structured-logging-on-aws-ecs-fargate-179d5bd221e6',
-    tags: ['AWS ECS Fargate', 'FireLens', 'Fluent Bit', 'CloudWatch Logs Insights', 'Structured Logging', 'Observability'],
+    tags: ['ECS Fargate', 'Fluent Bit', 'CloudWatch'],
     highlights: [
       'FireLens log router sidecar with custom Fluent Bit output configuration',
       'Structured JSON log schema for queryable, filterable container logs',
@@ -162,104 +147,9 @@ export const PROJECTS: ProjectItem[] = [
 ];
 
 export const STACK: StackCategory[] = [
-  {
-    category: 'Cloud',
-    items: [
-      'AWS (EKS, EC2, ECS, VPC, IAM, S3, RDS Aurora, ElastiCache, Route53, CloudWatch, Transit Gateway, PrivateLink)',
-      'Azure (Exposure)',
-    ],
-  },
-  {
-    category: 'Kubernetes',
-    items: [
-      'Kubernetes',
-      'Amazon EKS',
-      'Helm',
-      'Docker',
-      'ArgoCD',
-      'KEDA',
-      'Cluster Autoscaler',
-      'Istio Service Mesh',
-      'Kyverno',
-      'NetworkPolicies',
-      'Pod Security Standards (PSS/PSA)',
-    ],
-  },
-  {
-    category: 'IaC & Tools',
-    items: [
-      'Terraform',
-      'OpenTofu',
-      'Terragrunt',
-      'Ansible',
-      'CloudFormation',
-      'AWS Systems Manager (SSM)',
-      'Bash Scripting',
-      'Python Automation',
-    ],
-  },
-  {
-    category: 'CI / CD',
-    items: [
-      'GitHub Actions',
-      'Jenkins',
-      'CircleCI',
-      'AWS CodePipeline',
-      'Spacelift',
-      'ArgoCD (GitOps)',
-      'GitLab CI/CD Concepts',
-    ],
-  },
-  {
-    category: 'Observability',
-    items: [
-      'Grafana',
-      'Loki',
-      'Mimir',
-      'Tempo',
-      'Pyroscope',
-      'Alloy',
-      'Prometheus',
-      'AWS CloudWatch',
-      'Datadog',
-      'Sentry',
-    ],
-  },
-  {
-    category: 'Security & Compliance',
-    items: [
-      'HIPAA-Aligned Infrastructure Design',
-      'SOC 2 Type II Control Implementation',
-      'PCI DSS Network Segmentation',
-      'CIS AWS Foundations & Kubernetes Benchmarks',
-      'AWS IAM (Least Privilege & Separation of Duties)',
-      'KMS Policies (Key Usage Restriction by Resource/Principal)',
-      'Kyverno Policy Enforcement (Audit & Enforce modes)',
-      'Pod Security Standards (Restricted Profile)',
-      'securityContext Hardening (non-root, capabilities drop)',
-      'Default-Deny NetworkPolicies',
-      'VPC Security Groups & NACLs',
-      'CloudTrail Audit Logging & Change Governance',
-    ],
-  },
-  {
-    category: 'Systems & OS',
-    items: [
-      'Linux (Ubuntu, CentOS)',
-      'DNS & Networking',
-      'System Performance Analysis',
-      'Windows & PowerShell Exposure',
-    ],
-  },
-  {
-    category: 'Architecture & AI',
-    items: [
-      'Cloud Infrastructure Design',
-      'High/Low-Level Technical Design (HLD/LLD)',
-      'REST API Security',
-      'Microservices Architecture',
-      'AI-Assisted Troubleshooting',
-      'Cursor, GitHub Copilot, Claude & MCP Concepts',
-    ],
-  },
+  { category: 'Cloud & Containers', items: ['AWS', 'Amazon EKS', 'Kubernetes', 'Docker', 'Helm'] },
+  { category: 'Infrastructure', items: ['Terraform', 'OpenTofu', 'Terragrunt', 'Ansible'] },
+  { category: 'Delivery', items: ['GitHub Actions', 'ArgoCD', 'Spacelift'] },
+  { category: 'Observability', items: ['Grafana', 'Prometheus', 'Loki', 'Tempo'] },
+  { category: 'Security & Systems', items: ['IAM', 'Kyverno', 'Istio', 'Linux', 'Python', 'Bash'] },
 ];

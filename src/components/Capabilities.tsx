@@ -8,7 +8,7 @@ export const Capabilities = () => {
 
       <div style={{ marginBottom: '40px' }}>
         <p style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: '600', letterSpacing: '-0.025em', color: 'var(--text-primary)', lineHeight: 1.45 }}>
-          Designing resilient, automated cloud infrastructure and engineering zero-trust platforms that scale quietly.
+          How I can help your team.
         </p>
       </div>
 

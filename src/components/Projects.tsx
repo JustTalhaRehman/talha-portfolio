@@ -115,15 +115,27 @@ export const Projects = () => {
 
       <div style={{ marginBottom: '32px' }}>
         <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', fontWeight: '600', letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.45 }}>
-          A selection of production-tested cloud platforms, GitOps architectures, and open-source systems.
+          Selected infrastructure work, with code and architecture details.
         </p>
       </div>
 
       <div className="projects-list">
-        {PROJECTS.map((project) => (
+        {PROJECTS.slice(0, 3).map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}
       </div>
+
+      <details style={{ marginTop: '24px' }}>
+        <summary className="project-expand-btn" style={{ width: 'fit-content', listStyle: 'none' }}>
+          <ChevronDown size={13} aria-hidden="true" />
+          More projects &amp; writing ({PROJECTS.length - 3})
+        </summary>
+        <div className="projects-list">
+          {PROJECTS.slice(3).map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+      </details>
     </section>
   );
 };

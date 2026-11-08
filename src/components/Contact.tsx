@@ -11,7 +11,7 @@ export const Contact = () => {
       </h2>
 
       <p className="contact-sub">
-        Tell me about the release process, AWS environment or reliability problem you want to improve. Share what your team needs and what you have already tried. I am open to remote roles and project work across the United States, Canada, Europe, the Gulf, Australia, New Zealand, Singapore and worldwide.
+        Have a role or project in mind? Tell me what you’re building and where you need help. Open to remote work and relocation worldwide.
       </p>
 
       <a

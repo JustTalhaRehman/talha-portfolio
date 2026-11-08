@@ -33,16 +33,16 @@ export const About = () => {
 
         <div className="about-content-panel">
           <p className="about-paragraph">
-            I work with the engineers responsible for shipping and operating a product. That means understanding the existing system, making changes your team can review and explaining the decisions behind them. My work covers AWS architecture, Kubernetes security, GitOps delivery and production observability, with controls aligned to your regulatory requirements.
+            I’m Talha, a DevOps and platform engineer. I work alongside product teams to simplify delivery and keep infrastructure dependable. I start by understanding what already exists, then make changes your team can review and own.
           </p>
 
-          <p className="about-paragraph">I also founded <a href={TALHA_CONFIG.devistioUrl}>Devistio</a>, where I bring the same approach to cloud and platform consulting engagements.</p>
+          <p className="about-paragraph">I also founded <a href={TALHA_CONFIG.devistioUrl}>Devistio</a>, where I help teams with cloud and platform engineering.</p>
 
           <div className="about-pillars-grid">
             <div className="about-col diffuse-reveal">
               <span className="about-col-label">Operating Model</span>
               <p className="about-col-value">Remote &amp; Relocation</p>
-              <p className="about-col-sub">Open to UAE, Europe (Germany, France, Netherlands, Poland), New Zealand &amp; Worldwide</p>
+              <p className="about-col-sub">Available worldwide</p>
             </div>
 
             <div className="about-col diffuse-reveal">
@@ -51,32 +51,6 @@ export const About = () => {
               <p className="about-col-sub">BS Software Engineering (UMT)</p>
             </div>
 
-            <div className="about-col diffuse-reveal">
-              <span className="about-col-label">Platform Core</span>
-              <p className="about-col-value">Multi-Cloud, AWS &amp; Amazon EKS</p>
-              <p className="about-col-sub">Zero-Trust Security &amp; GitOps Delivery</p>
-            </div>
-
-            <div className="about-col diffuse-reveal">
-              <span className="about-col-label">Execution Standard</span>
-              <p className="about-col-value">
-                Understand existing environments, design practical solutions, automate via IaC, and validate in staging before production.
-              </p>
-            </div>
-
-            <div className="about-col diffuse-reveal">
-              <span className="about-col-label">Security Mindset</span>
-              <p className="about-col-value">
-                Separation of Duties, IAM least-privilege, Kyverno admission policies, default-deny networking, and continuous compliance checks with audit-ready logs.
-              </p>
-            </div>
-
-            <div className="about-col diffuse-reveal">
-              <span className="about-col-label">Reliability Standard</span>
-              <p className="about-col-value">
-                Correlated telemetry across logs, metrics, and traces with automated GitOps rollback workflows.
-              </p>
-            </div>
           </div>
         </div>
       </div>
