@@ -20,7 +20,7 @@ export function HeroVideo() {
 
     function syncPlayback() {
       if (!video || disposed) return;
-      video.playbackRate = 0.7;
+      video.playbackRate = 0.9;
       const shouldPlay = visible && !document.hidden &&
         !motion.matches && !pausedByUser;
       if (shouldPlay) {
